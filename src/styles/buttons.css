@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .zapBtn{
+    @apply bg-[#25D366] text-white hover:bg-[#37E07C] rounded-lg
+  }
+  .iconsBtn{
+    @apply bg-[#FFFFFF] rounded-lg hover:bg-[#F8F9FA]
+  }
+}

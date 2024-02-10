@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../../styles/index.css";
+import Providers  from "../../providers/providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,11 @@ export default function LocaleLayout({
 }) {
   return (
     <html lang={locale}>
-      <body>{children}</body>
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
