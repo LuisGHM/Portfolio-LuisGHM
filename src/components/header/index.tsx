@@ -27,7 +27,7 @@ const Header = ({ portuguease, english, whatsapp }: any) => {
     }, [isOpen, isAnimating]);
 
     return (
-        <header className={`flex flex-col w-full py-8 px-5 border-2 border-gray-100 dark:border-[#0A0A0B] dark:bg-[#0A0A0B] dark:text-white`}>
+        <header className={`flex flex-col w-full py-8 px-5 border-2 border-gray-100 dark:border-[#0A0A0B] dark:border-b-[#623CEA] dark:bg-[#0A0A0B] dark:text-white`}>
             <div className='flex justify-between items-center'>
                 <div className='flex items-center gap-2 w-full'>
                     <Image src={luis} alt="Luis" className="w-10 h-10 rounded-full overflow-hidden" />

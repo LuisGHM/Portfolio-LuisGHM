@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl"
 import Header from "../../components/header/index"
+import AboutMe from "@/components/Section/aboutMe";
 
 
 export default function Home() {
@@ -11,6 +12,9 @@ export default function Home() {
   return(
     <>
       <Header portuguease={portuguease} english={english} whatsapp={whatsapp}/>
+      <section className="w-full to-blue-500">
+        <AboutMe/>
+      </section>
     </>
   )
 }

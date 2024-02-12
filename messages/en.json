@@ -1,7 +1,13 @@
 {
-    "Home": {
-      "Portuguese": "Portuguese",
-      "English": "English",
-      "Whatsapp": "Communicate via Whatsapp"
-    }
+  "Home": {
+    "Portuguese": "Portuguese",
+    "English": "English",
+    "Whatsapp": "Communicate via Whatsapp"
+  },
+  "AboutMe": {
+    "Title": "Creating experiences through technology",
+    "Text": "I am a software engineering student at UniBrasil University. I am also taking a full-stack programming course at Kenzie Academy Brazil.",
+    "Projects": "Projects",
+    "Technologies": "Technologies"
   }
+}

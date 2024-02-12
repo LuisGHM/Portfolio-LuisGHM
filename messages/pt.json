@@ -2,6 +2,12 @@
   "Home": {
     "Portuguese": "Português",
     "English": "Inglês",
-    "Whatsapp": "Falar no Whatsapp"
+    "Whatsapp": "Falar no WhatsApp"
+  },
+  "AboutMe": {
+    "Title": "Criando experiências por meio da tecnologia",
+    "Text": "Sou estudante de engenharia de software na faculdade UniBrasil. Atualmente, curso o programa de programação full-stack da Kenzie Academy Brasil.",
+    "Projects": "Projetos",
+    "Technologies": "Tecnologias"
   }
 }
