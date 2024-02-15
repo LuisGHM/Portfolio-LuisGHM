@@ -83,7 +83,7 @@ const Technologies = ({ Proficient }: Proficient) => {
   };
 
   return (
-    <div className="bg-[#F1F3F5] p-5 overflow-x-hidden dark:bg-[#0A0A0B]">
+    <div className="bg-[#F1F3F5] p-5 overflow-x-hidden dark:bg-[#0A0A0B]" id="tech">
       <h1 className="text-2xl font-medium text-[#2D2E4D] mt-5 dark:text-[#F8F9FA]">{Proficient}</h1>
       <Slider {...settings}>
         {techIcons}
