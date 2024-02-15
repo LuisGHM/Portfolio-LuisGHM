@@ -9,5 +9,92 @@
     "Text": "Sou estudante de engenharia de software na faculdade UniBrasil. Atualmente, curso o programa de programação full-stack da Kenzie Academy Brasil.",
     "Projects": "Projetos",
     "Technologies": "Tecnologias"
+  },
+  "technologies": {
+    "Proficient": "Ferramentas que domino"
+  },
+  "Projects": {
+    "projects": "Projetos",
+    "origin": "Originalidade e",
+    "dedication": "dedicação",
+    "detail": "em cada detalhe",
+    "language": "Linguagens",
+    "application": "Aplicação",
+    "controle-de-projetos-kenzievelopers-LuisGHM": {
+      "Name": "Controle de projetos",
+      "Description": "O Controle de Projetos - KenzieVelopers é uma API Rest desenvolvida para facilitar a gestão de desenvolvedores e projetos em uma startup de tecnologia e desenvolvimento web. Criada utilizando TypeScript e integrada com um banco de dados PostgreSQL, esta aplicação permite o registro de desenvolvedores, associação de informações extras a cada desenvolvedor e o gerenciamento de projetos atribuídos a eles."
+    },
+    "ControleFinanceiroKenzie": {
+      "Name": "Controle financeiro",
+      "Description": "O projeto Control Finance é uma aplicação web desenvolvida para gerenciamento de gastos financeiros. Os usuários podem inserir valores, definir se são entradas ou saídas, visualizar todos os valores ou filtrá-los por categoria, como entrada ou saída. Além disso, a aplicação calcula automaticamente o valor total de acordo com o filtro selecionado e permite a remoção de valores. A estrutura inclui funcionalidades como cadastro, filtro, remoção e estilização, com a criação de variáveis de estilo e funcionalidades de modal. O projeto incentiva a prática de desenvolvimento web e oferece oportunidades de aprendizado em JavaScript, CSS e HTML, contribuindo para o aprimoramento das habilidades de programação e design de interfaces."
+    },
+    "crud_admin_m4_LuisGHM": {
+      "Name": "CRUD com permissão de administrador",
+      "Description": "O desafio consiste em desenvolver um MVP de uma API em TypeScript com controle de usuários, cursos e permissões de administrador. A API utiliza um banco de dados PostgreSQL e tem rotas para cadastro de usuários, login, listagem de usuários e cursos, além de funcionalidades para matricular usuários em cursos, desativar matrículas e listar usuários vinculados a um curso. A aplicação inclui testes automatizados e segue rigorosas regras de organização de código, nomenclatura de tabelas e colunas, validação de dados de entrada e saída, além de exigir autenticação para acessar determinadas rotas e permissão de administrador para outras."
+    },
+    "EcommerceKenzie": {
+      "Name": "Ecommerce",
+      "Description": "O objetivo é criar uma vitrine de produtos onde os cards são gerados dinamicamente, permitindo adicionar e remover itens ao carrinho, filtrar produtos por categoria e pesquisar itens na vitrine."
+    },
+    "hamburgueria-Kenzie_LuisGHM": {
+      "Name": "Hamburgueria",
+      "Description": "Este projeto de entrega visa implementar funcionalidades e estilização em um aplicativo existente, utilizando React para simular um carrinho de compras que busca produtos de uma API. A estilização, feita com SASS, deve ser responsiva, enquanto o uso de useEffect é fundamental para trazer os produtos da API, realizar buscas, gerenciar o carrinho e persistir os dados no localStorage. Um modal simples deve ser desenvolvido, com a possibilidade de refinamento através do fechamento ao clicar fora ou ao pressionar a tecla 'Esc'."
+    },
+    "kenzie-hub-LuisGHM": {
+      "Name": "kenzie Hub",
+      "Description": "Nesta etapa do projeto KenzieHub, estamos focados em desenvolver um CRUD para gerenciamento de tecnologias dos usuários, utilizando React e a Kenzie Hub API. Iniciamos com a criação de novos componentes e a estilização dos mesmos, seguido pela implementação de um contexto de tecnologias para compartilhar o estado entre os componentes. Em seguida, trabalhamos na funcionalidade de criação, exclusão e atualização de tecnologias, utilizando as rotas adequadas da API e garantindo uma interação fluida por meio de modais e React Hook Form. "
+    },
+    "LojaGeekKenzie": {
+      "Name": "Loja Geek",
+      "Description": "Neste projeto, estamos desenvolvendo um catálogo virtual para uma loja geek, onde listamos produtos disponíveis em estoque e facilitamos vendas por telefone ou aplicativos de venda. Começamos criando a estrutura do projeto e pensando na marcação HTML adequada, seguida pela estilização utilizando as cores e tamanhos definidos. Posteriormente, focamos nas funcionalidades, separando os itens em seções e criando listas dinâmicas para renderizá-los na página. "
+    },
+    "m4-kimoveis_LuisGHM": {
+      "Name": "Kimoveis",
+      "Description": "O Projeto Final KImóveis é uma aplicação robusta desenvolvida em TypeScript, utilizando TypeORM para lidar com relacionamentos complexos entre entidades. Voltado para a gestão de uma imobiliária, o sistema permite o cadastro de imóveis, usuários e agendamento de visitas, além de oferecer autenticação segura e controle de acesso. Com uma arquitetura sólida e testes automatizados, o projeto demonstra habilidades avançadas em desenvolvimento web e boas práticas de engenharia de software."
+    },
+    "m5-Kenzie-bandkamp-generic-view-LuisGHM": {
+      "Name": "Bandkamp",
+      "Description": "O Projeto Semanal BandKamp Generic View é uma modernização de um sistema legado desenvolvido em Django, que agora adota as práticas de Generic View e Model Serializer. A refatoração inclui a migração do banco de dados de SQLite3 para PostgreSQL, garantindo maior escalabilidade e desempenho. Além disso, a aplicação conta com uma documentação completa no formato Swagger ou Redoc, facilitando a compreensão e utilização dos endpoints. Com correções de bugs e uma configuração adequada para deploy na plataforma Render, o projeto demonstra o compromisso com a qualidade e atualização tecnológica."
+    },
+    "m5-kenzie-buster-LuisGHM": {
+      "Name": "Kenzie Buster",
+      "Description": "O Projeto Semanal Kenzie Buster é uma iniciativa para modernizar a gestão de vendas de filmes através de uma API robusta. Ele segue boas práticas de desenvolvimento, como uso de .gitignore e requirements.txt, e inclui recursos avançados como personalização de usuários, relacionamentos complexos entre usuários e filmes, validações personalizadas, autenticação JWT e controle de acesso. Destaca-se também a tabela Pivô customizada e campos de escolha para atributos de modelo, proporcionando uma experiência completa de gerenciamento. A aplicação é escalável e focada na usabilidade, com recursos de paginação."
+    },
+    "m5Kenzie-kiosque-LuisGHM": {
+      "Name": "Kiosque",
+      "Description": "O Projeto Semanal Kiosque oferece a chance de criar uma aplicação personalizada para uma loja de comidas, com foco na gestão do menu e no cálculo de gastos por mesa. Como freelancer, você será responsável por desenvolver essa solução, seguindo etapas definidas e requisitos detalhados para atender às necessidades do cliente."
+    },
+    "m5Kenzie-pet-kare-LuisGHM": {
+      "Name": "Pet Kare",
+      "Description": "O projeto é uma API para o petshop PetKare, ajudando a gerenciar informações de animais de forma eficiente. Oferece operações como cadastrar, listar, filtrar e atualizar pets, com suporte para filtros por características. Inclui configuração básica, um diagrama de entidade e relacionamento, além de tratamento de exceções. O objetivo é melhorar a gestão do PetKare de forma abrangente."
+    },
+    "M5KenzieKopaDoMundo-LuisGHM": {
+      "Name": "Kenzie Kopa do Mundo",
+      "Description": "O Projeto Semanal Kopa do Mundo é uma oportunidade emocionante de desenvolver uma API para organizar um campeonato de futebol promovido por uma empresa especializada em eventos esportivos. Cada equipe representa uma seleção nacional. Você será responsável por implementar funcionalidades para garantir a organização e eficiência do campeonato, como cadastro, listagem, filtragem, atualização e deleção das seleções participantes. O projeto será conduzido por etapas, com regras de negócio específicas, garantindo um gerenciamento completo do torneio."
+    },
+    "market-sp1-m4-LuisGHM": {
+      "Name": "Mercado autônomo",
+      "Description": "Este projeto é sobre criar uma API REST em TypeScript para gerenciar o estoque de uma startup que quer construir uma rede de mercados autônomos (Smart Store). A aplicação deve permitir a criação, listagem, atualização e deleção de produtos. O banco de dados será simulado por um array chamado 'market'. Precisaremos criar uma interface chamada 'Product' para tipar os produtos e implementar middlewares para verificar a existência do nome e do ID do produto. As rotas da aplicação incluem operações para criar, listar, obter, atualizar e deletar produtos, cada uma com suas próprias regras e formatos de resposta definidos."
+    },
+    "movies-sp2-m4_LuisGHM": {
+      "Name": "Locadora de Filmes",
+      "Description": "O projeto da Locadora de Filmes visa atender à necessidade urgente de modernização dos processos de uma locadora de filmes por meio de uma API. Essa API será integrada a uma plataforma de streaming para facilitar o acesso e a gestão dos filmes pelos clientes. O projeto requer adesão estrita às especificações fornecidas, incluindo o uso de TypeScript e PostgreSQL, e a criação de uma estrutura de banco de dados conforme diagrama fornecido. As rotas da API devem seguir padrões específicos para criação, listagem, atualização e deleção de filmes, com tratamento adequado de erros. O foco está na entrega de uma solução de alta qualidade alinhada às expectativas do cliente, oferecendo uma oportunidade desafiadora e gratificante para o desenvolvedor."
+    },
+    "OpenMusic-Kenzie": {
+      "Name": "Open Music",
+      "Description": "O Open Music é uma aplicação de venda de discos que permite aos usuários explorar uma variedade de categorias musicais e definir um preço máximo para os produtos que desejam visualizar. Com uma interface intuitiva e opções de personalização de tema, os usuários podem navegar com facilidade e encontrar os discos que mais os interessam. Desenvolvido com técnicas de CSS, métodos de array e persistência de dados no localstorage, o Open Music é uma demonstração de habilidades em front-end e desenvolvimento web."
+    },
+    "Portifolio-Generico-Kenzie": {
+      "Name": "Portfólio Genérico",
+      "Description": "O Portfólio genérico é uma aplicação desenvolvida para demonstrar habilidades em React e estilização CSS, seguindo o modelo fornecido no Figma. Com uma estrutura de componentes bem definida e renderização dinâmica de dados, o projeto permite aos usuários criar um portfólio personalizado para exibir suas habilidades e projetos. Utilizando CSS Modules, o Portfólio genérico busca oferecer uma experiência visual consistente e atraente em diferentes dispositivos."
+    },
+    "SiteInstitucionalGenerico": {
+      "Name": "Site Institucional Genérico",
+      "Description": "O Site Institucional Genérico é uma aplicação desenvolvida para demonstrar habilidades em CSS e HTML, utilizando um layout fornecido no Figma como referência. O objetivo é criar uma interface visualmente atraente e responsiva para um curso hipotético de programação. Ao aplicar conceitos como position, variáveis no CSS e criação de um modal, o projeto busca oferecer uma experiência de usuário intuitiva e moderna. Após a conclusão das tarefas, o código será hospedado no GitHub Pages para acessibilidade pública e avaliação."
+    },
+    "nu-kenzie_LuisGHM": {
+      "Name": "Nu Kenzie",
+      "Description": "O Nu Kenzie é uma aplicação de gerenciamento de gastos desenvolvida em React, com o objetivo de cadastrar entradas e saídas financeiras. Inspirado em conceitos de design fornecidos em um layout do Figma, o projeto enfatiza a componentização e estilização utilizando SASS para criar uma interface visualmente atraente. A parte lógica da aplicação envolve a utilização de estados para gerenciar transações, renderização dinâmica de elementos, adição e exclusão de transações, e cálculo do total utilizando o método reduce. Com o uso de condicionais ternários, busca-se proporcionar uma experiência de usuário fluida e intuitiva. O código será hospedado no GitHub para acessibilidade e avaliação."
+    }
   }
 }

@@ -2,12 +2,99 @@
   "Home": {
     "Portuguese": "Portuguese",
     "English": "English",
-    "Whatsapp": "Communicate via Whatsapp"
+    "Whatsapp": "Whatsapp"
   },
   "AboutMe": {
     "Title": "Creating experiences through technology",
-    "Text": "I am a software engineering student at UniBrasil University. I am also taking a full-stack programming course at Kenzie Academy Brazil.",
+    "Text": "I am a software engineering student at UniBrasil college. Currently, I am enrolled in the full-stack programming program at Kenzie Academy Brazil.",
     "Projects": "Projects",
     "Technologies": "Technologies"
+  },
+  "technologies": {
+    "Proficient": "Proficient in"
+  },
+  "Projects": {
+    "projects": "Projects",
+    "origin": "Originality and ",
+    "dedication": "dedication",
+    "detail": "in every detail",
+    "language": "Languages",
+    "application": "Application",
+    "controle-de-projetos-kenzievelopers-LuisGHM": {
+      "Name": "Project Control",
+      "Description": "The Project Control - KenzieVelopers is a Rest API developed to facilitate the management of developers and projects in a technology and web development startup. Created using TypeScript and integrated with a PostgreSQL database, this application allows the registration of developers, association of extra information to each developer, and management of projects assigned to them."
+    },
+    "ControleFinanceiroKenzie": {
+      "Name": "Financial Control",
+      "Description": "The Control Finance project is a web application developed for financial expense management. Users can enter values, define whether they are income or expenses, view all values, or filter them by category, such as income or expense. In addition, the application automatically calculates the total value according to the selected filter and allows the removal of values. The structure includes functionalities such as registration, filtering, removal, and styling, with the creation of style variables and modal functionalities. The project encourages web development practice and offers learning opportunities in JavaScript, CSS, and HTML, contributing to the improvement of programming and interface design skills."
+    },
+    "crud_admin_m4_LuisGHM": {
+      "Name": "CRUD with Administrator Permission",
+      "Description": "The challenge consists of developing an MVP of a TypeScript API with user control, courses, and administrator permissions. The API uses a PostgreSQL database and has routes for user registration, login, user and course listing, as well as functionalities for enrolling users in courses, disabling enrollments, and listing users linked to a course. The application includes automated tests and follows strict rules of code organization, table and column naming, validation of input and output data, as well as requiring authentication to access certain routes and administrator permission for others."
+    },
+    "EcommerceKenzie": {
+      "Name": "Ecommerce",
+      "Description": "The goal is to create a product showcase where cards are dynamically generated, allowing users to add and remove items to the shopping cart, filter products by category, and search for items in the showcase."
+    },
+    "hamburgueria-Kenzie_LuisGHM": {
+      "Name": "Burger Joint",
+      "Description": "This delivery project aims to implement features and styling in an existing application, using React to simulate a shopping cart that fetches products from an API. Styling, done with SASS, should be responsive, while the use of useEffect is essential to bring products from the API, perform searches, manage the cart, and persist data in localStorage. A simple modal should be developed, with the possibility of refinement through closing when clicking outside or pressing the 'Esc' key."
+    },
+    "kenzie-hub-LuisGHM": {
+      "Name": "Kenzie Hub",
+      "Description": "In this stage of the KenzieHub project, we are focused on developing a CRUD for managing users' technologies, using React and the Kenzie Hub API. We start by creating new components and styling them, followed by the implementation of a technology context to share state between components. Next, we work on the functionality of creating, deleting, and updating technologies, using the appropriate routes of the API and ensuring smooth interaction through modals and React Hook Form."
+    },
+    "LojaGeekKenzie": {
+      "Name": "Geek Store",
+      "Description": "In this project, we are developing a virtual catalog for a geek store, where we list products available in stock and facilitate sales by phone or sales apps. We start by creating the project structure and thinking about the appropriate HTML markup, followed by styling using defined colors and sizes. Later, we focus on functionalities, separating items into sections and creating dynamic lists to render them on the page."
+    },
+    "m4-kimoveis_LuisGHM": {
+      "Name": "Kimoveis",
+      "Description": "The Final Project KImóveis is a robust application developed in TypeScript, using TypeORM to handle complex relationships between entities. Aimed at managing a real estate agency, the system allows the registration of properties, users, and scheduling visits, as well as offering secure authentication and access control. With a solid architecture and automated tests, the project demonstrates advanced skills in web development and good software engineering practices."
+    },
+    "m5-Kenzie-bandkamp-generic-view-LuisGHM": {
+      "Name": "Bandkamp",
+      "Description": "The Weekly Project BandKamp Generic View is a modernization of a legacy system developed in Django, which now adopts Generic View and Model Serializer practices. The refactoring includes migrating the database from SQLite3 to PostgreSQL, ensuring greater scalability and performance. In addition, the application comes with complete documentation in Swagger or Redoc format, facilitating understanding and use of the endpoints. With bug fixes and proper configuration for deployment on the Render platform, the project demonstrates commitment to quality and technological updating."
+    },
+    "m5-kenzie-buster-LuisGHM": {
+      "Name": "Kenzie Buster",
+      "Description": "The Weekly Project Kenzie Buster is an initiative to modernize the management of movie sales through a robust API. It follows good development practices, such as using .gitignore and requirements.txt, and includes advanced features such as user customization, complex relationships between users and movies, custom validations, JWT authentication, and access control. It also highlights the customized Pivot table and choice fields for model attributes, providing a complete management experience. The application is scalable and focused on usability, with pagination features."
+    },
+    "m5Kenzie-kiosque-LuisGHM": {
+      "Name": "Kiosk",
+      "Description": "The Weekly Project Kiosk offers the chance to create a customized application for a food store, focusing on menu management and cost calculation per table. As a freelancer, you will be responsible for developing this solution, following defined steps and detailed requirements to meet the client's needs."
+    },
+    "m5Kenzie-pet-kare-LuisGHM": {
+      "Name": "Pet Kare",
+      "Description": "The project is an API for the PetKare pet shop, helping to efficiently manage animal information. It offers operations such as registering, listing, filtering, and updating pets, with support for filters by characteristics. It includes basic configuration, an entity and relationship diagram, as well as exception handling. The goal is to improve PetKare management comprehensively."
+    },
+    "M5KenzieKopaDoMundo-LuisGHM": {
+      "Name": "Kenzie World Cup",
+      "Description": "The Weekly Project Kopa do Mundo is an exciting opportunity to develop an API to organize a soccer championship promoted by a company specialized in sports events. Each team represents a national team. You will be responsible for implementing features to ensure the organization and efficiency of the championship, such as registration, listing, filtering, updating, and deletion of participating teams. The project will be conducted in stages, with specific business rules, ensuring complete tournament management."
+    },
+    "market-sp1-m4-LuisGHM": {
+      "Name": "Autonomous Market",
+      "Description": "This project is about creating a TypeScript REST API to manage the inventory of a startup that wants to build a network of autonomous markets (Smart Store). The application should allow the creation, listing, updating, and deletion of products. The database will be simulated by an array called 'market'. We will need to create an interface called 'Product' to type the products and implement middlewares to check the existence of the product name and ID. The application routes include operations for creating, listing, getting, updating, and deleting products, each with its own rules and response formats defined."
+    },
+    "movies-sp2-m4_LuisGHM": {
+      "Name": "Movie Rental",
+      "Description": "The Movie Rental project aims to meet the urgent need to modernize the processes of a movie rental store through an API. This API will be integrated with a streaming platform to facilitate access and management of movies by customers. The project requires strict adherence to the provided specifications, including the use of TypeScript and PostgreSQL, and the creation of a database structure according to the provided diagram. The API routes must follow specific standards for creating, listing, updating, and deleting movies, with proper error handling. The focus is on delivering a high-quality solution aligned with customer expectations, offering a challenging and rewarding opportunity for the developer."
+    },
+    "OpenMusic-Kenzie": {
+      "Name": "Open Music",
+      "Description": "Open Music is a record sales application that allows users to explore a variety of musical categories and set a maximum price for the products they want to view. With an intuitive interface and theme customization options, users can navigate easily and find the records that interest them the most. Developed with CSS techniques, array methods, and data persistence in localstorage, Open Music is a demonstration of skills in front-end and web development."
+    },
+    "Portifolio-Generico-Kenzie": {
+      "Name": "Generic Portfolio",
+      "Description": "The Generic Portfolio is an application developed to demonstrate skills in React and CSS styling, following the model provided in Figma. With a well-defined component structure and dynamic data rendering, the project allows users to create a customized portfolio to showcase their skills and projects. Using CSS Modules, the Generic Portfolio seeks to offer a consistent and attractive visual experience on different devices."
+    },
+    "SiteInstitucionalGenerico": {
+      "Name": "Generic Institutional Website",
+      "Description": "The Generic Institutional Website is an application developed to demonstrate skills in CSS and HTML, using a layout provided in Figma as reference. The goal is to create a visually appealing and responsive interface for a hypothetical programming course. By applying concepts such as position, variables in CSS, and creating a modal, the project seeks to offer an intuitive and modern user experience. After completing the tasks, the code will be hosted on GitHub Pages for public accessibility and evaluation."
+    },
+    "nu-kenzie_LuisGHM": {
+      "Name": "Nu Kenzie",
+      "Description": "Nu Kenzie is a expense management application developed in React, with the aim of registering financial income and expenses. Inspired by design concepts provided in a Figma layout, the project emphasizes componentization and styling using SASS to create a visually attractive interface. The logical part of the application involves using states to manage transactions, dynamic rendering of elements, addition and deletion of transactions, and calculation of the total using the reduce method. With the use of ternary conditionals, the aim is to provide a smooth and intuitive user experience. The code will be hosted on GitHub for accessibility and evaluation."
+    }
   }
 }

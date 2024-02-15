@@ -8,7 +8,11 @@ import { SiTypescript, SiCsharp, SiPostgresql, SiDotnet, SiDjango } from 'react-
 import { IconType } from 'react-icons';
 import Tooltip from "../../modal/TechModal/index";
 
-const Technologies = () => {
+interface Proficient{
+  Proficient: string
+}
+
+const Technologies = ({ Proficient }: Proficient) => {
   const icons: { [key: string]: IconType } = {
     HTML: FaHtml5,
     CSS: FaCss3Alt,
@@ -80,7 +84,7 @@ const Technologies = () => {
 
   return (
     <div className="bg-[#F1F3F5] p-5 overflow-x-hidden dark:bg-[#0A0A0B]">
-      <h1 className="text-2xl font-medium text-[#2D2E4D] mt-5 dark:text-[#F8F9FA]">Ferramentas que domino</h1>
+      <h1 className="text-2xl font-medium text-[#2D2E4D] mt-5 dark:text-[#F8F9FA]">{Proficient}</h1>
       <Slider {...settings}>
         {techIcons}
       </Slider>
