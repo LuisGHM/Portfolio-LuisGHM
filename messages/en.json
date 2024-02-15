@@ -96,5 +96,8 @@
       "Name": "Nu Kenzie",
       "Description": "Nu Kenzie is a expense management application developed in React, with the aim of registering financial income and expenses. Inspired by design concepts provided in a Figma layout, the project emphasizes componentization and styling using SASS to create a visually attractive interface. The logical part of the application involves using states to manage transactions, dynamic rendering of elements, addition and deletion of transactions, and calculation of the total using the reduce method. With the use of ternary conditionals, the aim is to provide a smooth and intuitive user experience. The code will be hosted on GitHub for accessibility and evaluation."
     }
+  },
+  "Footer": {
+    "thanks": "Thanks for accessing!!"
   }
 }

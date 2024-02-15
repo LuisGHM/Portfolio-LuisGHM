@@ -3,6 +3,7 @@ import Header from "../../components/header/index"
 import AboutMe from "@/components/Section/aboutMe";
 import Technologies from "@/components/Section/Technologies";
 import ProjectsList from "@/components/ProjectsList";
+import FooterSection from "@/components/footer";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
   const whatsapp = t("Whatsapp")
   const t2 = useTranslations("technologies");
   const Proficient = t2("Proficient")
+  const t3 = useTranslations("Footer")
   
   return(
     <>
@@ -25,6 +27,9 @@ export default function Home() {
       <main className="bg-white">
           <ProjectsList/>
       </main>
+      <footer>
+        <FooterSection thanks={t3("thanks")}/>
+      </footer>
     </>
   )
 }

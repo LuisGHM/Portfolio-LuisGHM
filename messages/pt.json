@@ -96,5 +96,8 @@
       "Name": "Nu Kenzie",
       "Description": "O Nu Kenzie é uma aplicação de gerenciamento de gastos desenvolvida em React, com o objetivo de cadastrar entradas e saídas financeiras. Inspirado em conceitos de design fornecidos em um layout do Figma, o projeto enfatiza a componentização e estilização utilizando SASS para criar uma interface visualmente atraente. A parte lógica da aplicação envolve a utilização de estados para gerenciar transações, renderização dinâmica de elementos, adição e exclusão de transações, e cálculo do total utilizando o método reduce. Com o uso de condicionais ternários, busca-se proporcionar uma experiência de usuário fluida e intuitiva. O código será hospedado no GitHub para acessibilidade e avaliação."
     }
+  },
+  "Footer": {
+    "thanks": "Obrigado por acessar!!"
   }
 }
