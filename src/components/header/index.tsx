@@ -27,7 +27,7 @@ const Header = ({ portuguease, english, whatsapp }: any) => {
     }, [isOpen, isAnimating]);
 
     return (
-        <header className={`flex flex-col w-full py-8 px-5 border-2 border-gray-100 dark:border-[#0A0A0B] dark:border-b-[#623CEA] dark:bg-[#0A0A0B] dark:text-white`}>
+        <div className={`flex flex-col w-full py-8 px-5 md:max-w-[90%] mx-auto`}>
             <div className='flex justify-between items-center'>
                 <div className='flex items-center gap-2 w-full'>
                     <Image src={luis} alt="Luis" className="w-10 h-10 rounded-full overflow-hidden" />
@@ -45,7 +45,7 @@ const Header = ({ portuguease, english, whatsapp }: any) => {
             <div className={`mt-4 max-h-screen transition-all duration-500 ${isAnimating ? 'opacity-0' : isOpen ? 'opacity-100 max-h-full' : 'opacity-0 max-h-0'}`} style={{ display: isOpen || isAnimating ? 'block' : 'none' }}>
                 <CellNav portuguease={portuguease} english={english} whatsapp={whatsapp}/>
             </div>
-        </header>
+        </div>
     );
 }
 

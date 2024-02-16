@@ -13,3 +13,8 @@
 .slick-list{
     margin-right: -30px;
 }
+
+.content-wrapper {
+    max-width: 90%;
+    margin: 0 auto; /* Isso centralizará o conteúdo */
+}

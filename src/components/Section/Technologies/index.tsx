@@ -43,47 +43,73 @@ const Technologies = ({ Proficient }: Proficient) => {
     );
   });
 
-  var settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
+var settings = {
+  dots: false,
+  arrows: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 7,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  pauseOnHover: true,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1650,
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 1,
       }
-    ]
-  };
+    },
+    {
+      breakpoint: 1450,
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 1250,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 720,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 400,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
+
 
   return (
-    <div className="bg-[#F1F3F5] p-5 overflow-x-hidden dark:bg-[#0A0A0B]" id="tech">
+    <div className="p-5 overflow-x-hidden md:max-w-[90%] mx-auto" id="tech">
       <h1 className="text-2xl font-medium text-[#2D2E4D] mt-5 dark:text-[#F8F9FA]">{Proficient}</h1>
       <Slider {...settings}>
         {techIcons}

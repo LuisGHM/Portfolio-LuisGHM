@@ -17,17 +17,19 @@ export default function Home() {
   
   return(
     <>
-      <Header portuguease={portuguease} english={english} whatsapp={whatsapp}/>
-      <section className="w-full to-blue-500">
+      <header className="border-2 border-gray-100 dark:border-[#0A0A0B] dark:border-b-[#623CEA] dark:bg-[#0A0A0B] dark:text-white">
+        <Header portuguease={portuguease} english={english} whatsapp={whatsapp}/>
+      </header>
+      <section className="to-blue-500 relative bg-[#5C63ED]">
         <AboutMe/>
       </section>
-      <section>
+      <section className="bg-[#F1F3F5] dark:bg-[#0A0A0B]">
         <Technologies Proficient={Proficient}/>
       </section>
-      <main className="bg-white">
+      <main className="bg-white dark:bg-[#121214]">
           <ProjectsList/>
       </main>
-      <footer>
+      <footer className="bg-[#5C63ED] dark:bg-[#623CEA]">
         <FooterSection thanks={t3("thanks")}/>
       </footer>
     </>

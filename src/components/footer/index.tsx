@@ -15,7 +15,7 @@ const FooterSection = ({thanks}: FooterProp) => {
     };
 
     return (
-        <div className="bg-[#5C63ED] flex flex-col items-center justify-center p-10 mt-5 relative dark:bg-[#623CEA]">
+        <div className="flex flex-col items-center justify-center p-10 mt-5 relative max-w-[90%] mx-auto">
             <a href="#" onClick={scrollToTop} className="absolute top-0 transform -translate-y-1/2 bg-white rounded-full p-2 text-black">
                 <FaArrowUp />
             </a>

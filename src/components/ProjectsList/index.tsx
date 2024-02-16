@@ -20,7 +20,7 @@ const ProjectsList = async () => {
 
       return (
         <>
-          <div className="p-5 flex flex-col gap-16 dark:bg-[#121214]" id="project">
+          <div className="p-5 flex flex-col gap-16 max-w-[90%] mx-auto" id="project">
             <div className="flex flex-col gap-5">
               <p className="mt-5 font-semibold text-base text-[#495057] dark:text-[#F8F9FA]">
                 {t("projects")}

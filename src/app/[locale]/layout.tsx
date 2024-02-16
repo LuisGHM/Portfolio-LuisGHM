@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "../../styles/index.css";
-import Providers  from "../../providers/providers";
+import Providers from "../../providers/providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -9,17 +9,15 @@ export const metadata: Metadata = {
 
 export default function LocaleLayout({
   children,
-  params: {locale}
+  params: { locale }
 }: {
   children: React.ReactNode;
-  params: {locale: string};
+  params: { locale: string };
 }) {
   return (
     <html lang={locale}>
-      <body>
-        <Providers>
-          {children}
-        </Providers>
+      <body className="mx-auto">
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
