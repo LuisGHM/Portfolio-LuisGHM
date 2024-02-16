@@ -3,15 +3,15 @@ import { FaGithub } from "react-icons/fa";
 import { MdOutlineDarkMode, MdOutlineLightMode, MdLanguage } from "react-icons/md";
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
-import { useRouter, usePathname } from "../../navigation"
+import { useRouter, usePathname } from "../../../navigation"
 
-interface CellNavProps {
-    portuguease: any;
+export interface CellNavProps {
+    portuguese: any;
     english: any;
     whatsapp: any;
 }
 
-const CellNav = ({portuguease, english, whatsapp}: CellNavProps) => {
+const CellNav = ({ portuguese, english, whatsapp }: CellNavProps) => {
     const [isOptOpen, setIsOptOpen] = useState(false);
     const optsRef = useRef<HTMLDivElement>(null);
     const [mounted, setMounted] = useState(false)
@@ -50,12 +50,12 @@ const CellNav = ({portuguease, english, whatsapp}: CellNavProps) => {
                     <button id="opts" onClick={() => setIsOptOpen(!isOptOpen)} className={`h-11 border-2 flex items-center w-full iconsBtn dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black`}><MdLanguage className="w-full h-7"/></button>
                     {isOptOpen && (
                         <ul className={`absolute dark:bg-gray-900 z-10 mt-2 w-full rounded-md shadow-lg`} style={{ top: "calc(100% - 8px)", left: 0 }}>
-                            <li onClick={() => router.push(pathname, {locale: 'en'})} className={`w-full px-3 py-1 bg-white dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black border-b border-gray-300 hover:bg-gray-200`}>{english}</li>
-                            <li onClick={() => router.push(pathname, {locale: 'pt'})} className={`w-full px-3 py-1 bg-white dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-gray-200`}>{portuguease}</li>
+                            <li onClick={() => router.push(pathname, {locale: 'en'})} className={`language-option w-full px-3 py-1 bg-white dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black border-b border-gray-300 hover:bg-gray-200 cursor-pointer`}>{english}</li>
+                            <li onClick={() => router.push(pathname, {locale: 'pt'})} className={`language-option w-full px-3 py-1 bg-white dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black hover:bg-gray-200 cursor-pointer`}>{portuguese}</li>
                         </ul>
                     )}
                 </div>
-                <a href="#" className={`col-span-2 h-11 border-2 flex items-center justify-center zapBtn dark:border-transparent`}><h2 className="font-semibold">{whatsapp}</h2></a>
+                <a href="https://api.whatsapp.com/send/?phone=5541995117543&text&type=phone_number&app_absent=0" className={`col-span-2 h-11 border-2 flex items-center justify-center zapBtn dark:border-transparent`}><h2 className="font-semibold">{whatsapp}</h2></a>
             </nav>
         </div>
     );

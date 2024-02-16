@@ -8,7 +8,7 @@ import FooterSection from "@/components/footer";
 
 export default function Home() {
   const t = useTranslations("Home");
-  const portuguease = t("Portuguese")
+  const portuguese = t("Portuguese")
   const english = t("English")
   const whatsapp = t("Whatsapp")
   const t2 = useTranslations("technologies");
@@ -18,9 +18,9 @@ export default function Home() {
   return(
     <>
       <header className="border-2 border-gray-100 dark:border-[#0A0A0B] dark:border-b-[#623CEA] dark:bg-[#0A0A0B] dark:text-white">
-        <Header portuguease={portuguease} english={english} whatsapp={whatsapp}/>
+        <Header portuguese={portuguese} english={english} whatsapp={whatsapp}/>
       </header>
-      <section className="to-blue-500 relative bg-[#5C63ED]">
+      <section className="to-blue-500 relative bg-[#5C63ED] dark:bg-[#121214]">
         <AboutMe/>
       </section>
       <section className="bg-[#F1F3F5] dark:bg-[#0A0A0B]">

@@ -27,7 +27,7 @@ export const ProjectsCard = async ({ item }: ProjectsCardProps) => {
 
             return (
                 <>
-                    <div className="flex flex-col gap-6 ">
+                    <div className="flex flex-col gap-6 max-w-[500px]">
                         <h1 className="font-medium text-2xl text-[#212529] dark:text-[#F8F9FA]">{projectName}</h1>
                         <div className="flex flex-row gap-2 items-center">
                             <p className=" font-medium text-sm dark:text-[#868E96]">{language}:</p>

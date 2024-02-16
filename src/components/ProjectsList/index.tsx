@@ -20,7 +20,7 @@ const ProjectsList = async () => {
 
       return (
         <>
-          <div className="p-5 flex flex-col gap-16 max-w-[90%] mx-auto" id="project">
+          <div className="p-5 flex flex-col gap-16 max-w-[80%] mx-auto" id="project">
             <div className="flex flex-col gap-5">
               <p className="mt-5 font-semibold text-base text-[#495057] dark:text-[#F8F9FA]">
                 {t("projects")}
@@ -28,13 +28,15 @@ const ProjectsList = async () => {
               <h1 className="font-semibold text-2xl text-[#2D2E4D] dark:text-[#623CEA]">{t("origin")} <span className="text-[#5C63ED] dark:text-[#7D82F1]">{t("dedication")}</span> {t("detail")}
               </h1>
             </div>
-            {projects
-              .filter((item) => item.name !== "LuisGHM")
-              .map((item) => (
-                <div key={item.id}>
-                  <ProjectsCard item={item} />
-                </div>
-              ))}
+            <div className="flex flex-col gap-16 md:max-w-full md:flex-row md:flex-wrap md:items-center md: justify-around">
+              {projects
+                .filter((item) => item.name !== "LuisGHM")
+                .map((item) => (
+                  <div key={item.id} className="flex flex-row">
+                    <ProjectsCard item={item} />
+                  </div>
+                ))}
+            </div>
           </div>
         </>
       );

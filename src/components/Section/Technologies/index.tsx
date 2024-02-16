@@ -109,7 +109,7 @@ var settings = {
 
 
   return (
-    <div className="p-5 overflow-x-hidden md:max-w-[90%] mx-auto" id="tech">
+    <div className="p-5 overflow-x-hidden md:max-w-[80%] mx-auto" id="tech">
       <h1 className="text-2xl font-medium text-[#2D2E4D] mt-5 dark:text-[#F8F9FA]">{Proficient}</h1>
       <Slider {...settings}>
         {techIcons}
