@@ -43,8 +43,8 @@ const CellNav = ({ portuguese, english, whatsapp }: CellNavProps) => {
     return (
         <div>
             <nav className={`grid grid-cols-2 gap-2 dark:bg-[#0A0A0B] dark:text-white`}>
-                <a href="https://www.linkedin.com/in/luis-gustavo-hedel-marchiore/" className={`h-11 border-2 flex items-center iconsBtn dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black`}><CiLinkedin className="w-full h-7" /></a>
-                <a href="https://github.com/LuisGHM" className={`h-11 border-2 flex items-center iconsBtn dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black`}><FaGithub className="w-full h-7" /></a>
+                <a target="_blank" href="https://www.linkedin.com/in/luis-gustavo-hedel-marchiore/" className={`h-11 border-2 flex items-center iconsBtn dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black`}><CiLinkedin className="w-full h-7" /></a>
+                <a target="_blank" href="https://github.com/LuisGHM" className={`h-11 border-2 flex items-center iconsBtn dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black`}><FaGithub className="w-full h-7" /></a>
                 <a onClick={() => setTheme(theme == "dark"? "light": "dark")} className={`aqui h-11 border-2 flex items-center justify-center iconsBtn dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black`}>{theme == "light" ? <MdOutlineLightMode className="w-full h-7" /> : <MdOutlineDarkMode className="w-full h-7" />}</a>
                 <div className="relative" ref={optsRef}>
                     <button id="opts" onClick={() => setIsOptOpen(!isOptOpen)} className={`h-11 border-2 flex items-center w-full iconsBtn dark:bg-[#121214] dark:border-[#121214] dark:text-white dark:hover:bg-white dark:hover:text-black`}><MdLanguage className="w-full h-7"/></button>
@@ -55,7 +55,7 @@ const CellNav = ({ portuguese, english, whatsapp }: CellNavProps) => {
                         </ul>
                     )}
                 </div>
-                <a href="https://api.whatsapp.com/send/?phone=5541995117543&text&type=phone_number&app_absent=0" className={`col-span-2 h-11 border-2 flex items-center justify-center zapBtn dark:border-transparent`}><h2 className="font-semibold">{whatsapp}</h2></a>
+                <a target="_blank" href="https://api.whatsapp.com/send/?phone=5541995117543&text&type=phone_number&app_absent=0" className={`col-span-2 h-11 border-2 flex items-center justify-center zapBtn dark:border-transparent`}><h2 className="font-semibold">{whatsapp}</h2></a>
             </nav>
         </div>
     );

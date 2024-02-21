@@ -36,8 +36,8 @@ export const ProjectsCard = ({ item }: ProjectsCardProps) => {
                             </div>
                             <p className=" font-normal text-base text-[#495057] dark:text-[#868E96]">{projectDescription}</p>
                             <div className="flex flex-row gap-10 items-center">
-                                <a href={`${item.html_url}`} className="flex items-center gap-1 font-medium text-base text-[#495057] p-1 rounded-lg hover:bg-[#F8F9FA] dark:text-[#868E96]"><FaGithub /> Github Code</a>
-                                {item.homepage ? <a href={`${item.homepage}`} className="flex flex-row items-center gap-1 font-medium text-base text-[#495057]  p-1 rounded-lg hover:bg-[#F8F9FA] dark:text-[#868E96]"><FaShare /> {t2("application")}</a> : null}
+                                <a target="_blank" href={`${item.html_url}`} className="flex items-center gap-1 font-medium text-base text-[#495057] p-1 rounded-lg hover:bg-[#F8F9FA] dark:text-[#868E96]"><FaGithub /> Github Code</a>
+                                {item.homepage ? <a target="_blank" href={`${item.homepage}`} className="flex flex-row items-center gap-1 font-medium text-base text-[#495057]  p-1 rounded-lg hover:bg-[#F8F9FA] dark:text-[#868E96]"><FaShare /> {t2("application")}</a> : null}
                             </div>
                         </div>
                     </>
