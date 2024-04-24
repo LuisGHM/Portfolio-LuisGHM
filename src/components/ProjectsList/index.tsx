@@ -32,9 +32,7 @@ const ProjectsList = async () => {
               {projects
                 .filter((item) => item.name !== "LuisGHM")
                 .map((item) => (
-                  <div key={item.id} className="flex flex-row">
-                    <ProjectsCard item={item} />
-                  </div>
+                    <ProjectsCard item={item} key={item.id}/>
                 ))}
             </div>
           </div>

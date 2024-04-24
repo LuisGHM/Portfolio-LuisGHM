@@ -27,7 +27,7 @@ export default function Home() {
         <Technologies Proficient={Proficient}/>
       </section>
       <main className="bg-white dark:bg-[#121214]">
-          <ProjectsList/>
+        <ProjectsList/>
       </main>
       <footer className="bg-[#5C63ED] dark:bg-[#623CEA]">
         <FooterSection thanks={t3("thanks")}/>
