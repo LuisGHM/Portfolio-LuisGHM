@@ -38,7 +38,7 @@
     },
     "hamburgueria-Kenzie_LuisGHM": {
       "Name": "Burger Joint",
-      "Description": "This delivery project aims to implement features and styling in an existing application, using React to simulate a shopping cart that fetches products from an API. Styling, done with SASS, should be responsive, while the use of useEffect is essential to bring products from the API, perform searches, manage the cart, and persist data in localStorage. A simple modal should be developed, with the possibility of refinement through closing when clicking outside or pressing the 'Esc' key."
+      "Description": "This delivery project aims to implement features and styling in an existing application, using React to simulate a shopping cart that fetches products from an API. Styling, done with SASS, should be responsive, while the use of useEffect is essential to bring products from the API, perform searches, manage the cart, and persist data in localStorage. A simple modal should be developed."
     },
     "kenzie-hub-LuisGHM": {
       "Name": "Kenzie Hub",
@@ -95,6 +95,14 @@
     "nu-kenzie_LuisGHM": {
       "Name": "Nu Kenzie",
       "Description": "Nu Kenzie is a expense management application developed in React, with the aim of registering financial income and expenses. Inspired by design concepts provided in a Figma layout, the project emphasizes componentization and styling using SASS to create a visually attractive interface. The logical part of the application involves using states to manage transactions, dynamic rendering of elements, addition and deletion of transactions, and calculation of the total using the reduce method. With the use of ternary conditionals, the aim is to provide a smooth and intuitive user experience. The code will be hosted on GitHub for accessibility and evaluation."
+    },
+    "Kenzie-fullstack-challenge-Back-LuisGHM": {
+      "Name": "Full Stack Challenge Back-End",
+      "Description": "I developed a full-stack project as part of a challenge proposed by Kenzie Academy, where I could apply my knowledge in front-end and back-end. The project consists of a client and their contacts' registration system, with basic CRUD operations and report generation displaying the data of clients and their linked contacts. I used TypeScript for the implementation, ensuring a functional and smooth experience for the user."
+    },
+    "Kenzie-fullstack-challenge-Front-LuisGHM": {
+      "Name": "Full Stack Challenge Front-End",
+      "Description": "I developed a full-stack project as part of a challenge proposed by Kenzie Academy, where I could apply my knowledge in front-end and back-end. The project consists of a client and their contacts' registration system, with basic CRUD operations and report generation displaying the data of clients and their linked contacts. I used TypeScript for the implementation, ensuring a functional and smooth experience for the user."
     }
   },
   "Footer": {
