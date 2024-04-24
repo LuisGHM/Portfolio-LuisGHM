@@ -6,10 +6,9 @@ import { FaShare } from "react-icons/fa";
 
 export interface ProjectsCardProps {
     item: projectsGit;
-    key: number;
 }
 
-export const ProjectsCard = ({ item, key }: ProjectsCardProps) => {
+export const ProjectsCard = ({ item }: ProjectsCardProps) => {
     const t = useTranslations("Projects." + item.name); 
     const t2 = useTranslations("Projects"); 
     const projectName = t("Name"); 
@@ -28,7 +27,7 @@ export const ProjectsCard = ({ item, key }: ProjectsCardProps) => {
                 const languages = response.data;
 
                 return (
-                    <div className="flex flex-row" key={key}>
+                    <div className="flex flex-row">
                         <div className="flex flex-col gap-6 max-w-[500px]">
                             <h1 className="font-medium text-2xl text-[#212529] dark:text-[#F8F9FA]">{projectName}</h1>
                             <div className="flex flex-row gap-2 items-center">
