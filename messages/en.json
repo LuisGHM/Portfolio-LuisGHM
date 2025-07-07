@@ -10,6 +10,33 @@
     "Projects": "Projects",
     "Technologies": "Technologies"
   },
+  "Experience": {
+    "Title": "Professional Journey",
+    "Subtitle": "Building impactful solutions across web development and artificial intelligence"
+  },
+  "Education": {
+    "Title": "Academic Background",
+    "Subtitle": "Academic foundation in software engineering and advanced AI research"
+  },
+  "Skills": {
+    "Title": "Technical Expertise",
+    "Subtitle": "Expertise across the full technology stack with specialization in AI and computer vision"
+  },
+  "Contact": {
+    "Title": "Let's Work Together",
+    "Subtitle": "I'm always interested in new opportunities and exciting projects. Whether you want to discuss a potential collaboration or just say hello, I'd love to hear from you.",
+    "GetInTouch": "Get in Touch",
+    "FollowMe": "Follow Me",
+    "Name": "Name",
+    "Email": "Email",
+    "Message": "Message",
+    "SendMessage": "Send Message",
+    "Sending": "Sending...",
+    "SuccessMessage": "Message sent successfully! I'll get back to you soon.",
+    "ErrorMessage": "Failed to send message. Please try again or contact me directly.",
+    "Location": "Location",
+    "WhatsApp": "WhatsApp"
+  },
   "technologies": {
     "Proficient": "Proficient in"
   },

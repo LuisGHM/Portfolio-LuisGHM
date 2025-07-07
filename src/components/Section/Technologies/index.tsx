@@ -3,8 +3,10 @@ import Slider from "react-slick";
 import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaDatabase, FaGit, FaNodeJs, FaDotCircle } from 'react-icons/fa';
-import { SiTypescript, SiCsharp, SiPostgresql, SiDotnet, SiDjango } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaDatabase, FaGit, FaNodeJs } from 'react-icons/fa';
+import { SiTypescript, SiPostgresql, SiDotnet, SiDjango } from 'react-icons/si';
+// Import C# icon differently to avoid barrel optimization issue
+import { TbBrandCSharp } from 'react-icons/tb'; // Alternative C# icon
 import { IconType } from 'react-icons';
 import Tooltip from "../../modal/TechModal/index";
 
@@ -18,7 +20,7 @@ const Technologies = ({ Proficient }: Proficient) => {
     CSS: FaCss3Alt,
     JavaScript: FaJs,
     TypeScript: SiTypescript,
-    "C#": SiCsharp,
+    "C#": TbBrandCSharp, // Changed from SiCsharp to TbBrandCSharp
     Python: FaPython,
     SQL: FaDatabase,
     postgreSQL: SiPostgresql,

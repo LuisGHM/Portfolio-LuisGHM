@@ -10,6 +10,33 @@
     "Projects": "Projetos",
     "Technologies": "Tecnologias"
   },
+  "Experience": {
+    "Title": "Jornada Profissional",
+    "Subtitle": "Construindo soluções impactantes em desenvolvimento web e inteligência artificial"
+  },
+  "Education": {
+    "Title": "Formação Acadêmica",
+    "Subtitle": "Base acadêmica sólida em engenharia de software e pesquisa avançada em IA"
+  },
+  "Skills": {
+    "Title": "Expertise Técnica",
+    "Subtitle": "Especialização em todo o stack tecnológico com foco em IA e visão computacional"
+  },
+  "Contact": {
+    "Title": "Vamos Trabalhar Juntos",
+    "Subtitle": "Estou sempre interessado em novas oportunidades e projetos empolgantes. Seja para discutir uma possível colaboração ou apenas dizer olá, adoraria ouvir de você.",
+    "GetInTouch": "Entre em Contato",
+    "FollowMe": "Me Siga",
+    "Name": "Nome",
+    "Email": "Email",
+    "Message": "Mensagem",
+    "SendMessage": "Enviar Mensagem",
+    "Sending": "Enviando...",
+    "SuccessMessage": "Mensagem enviada com sucesso! Retornarei em breve.",
+    "ErrorMessage": "Falha ao enviar mensagem. Tente novamente ou entre em contato diretamente.",
+    "Location": "Localização",
+    "WhatsApp": "WhatsApp"
+  },
   "technologies": {
     "Proficient": "Ferramentas que domino"
   },
