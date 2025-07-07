@@ -1,6 +1,6 @@
 "use client"
 import { FaDownload, FaArrowRight, FaCode, FaBrain } from "react-icons/fa";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 interface AboutMeProps {
   translations: {
@@ -9,41 +9,44 @@ interface AboutMeProps {
   };
 }
 
+const ROLES = [
+    "Software Engineer", 
+    "Full-Stack Developer", 
+    "AI Specialist",
+    "Computer Vision Engineer"
+];
+
 export const AboutMe = ({ translations }: AboutMeProps) => {
     const [displayText, setDisplayText] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
-    
-    const roles = [
-        "Software Engineer", 
-        "Full-Stack Developer", 
-        "AI Specialist",
-        "Computer Vision Engineer"
-    ];
-
-    // Função para resetar o typewriter
-    const resetTypewriter = useCallback(() => {
-        setCurrentIndex((prev) => (prev + 1) % roles.length);
-        setDisplayText("");
-    }, [roles.length]);
+    const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
-        const role = roles[currentIndex];
-        let charIndex = 0;
-        
-        const typeWriter = setInterval(() => {
-            if (charIndex < role.length) {
-                setDisplayText(role.substring(0, charIndex + 1));
-                charIndex++;
-            } else {
-                clearInterval(typeWriter);
-                setTimeout(() => {
-                    resetTypewriter();
-                }, 2000);
-            }
-        }, 100);
+        const currentRole = ROLES[currentIndex];
+        let timeout: NodeJS.Timeout;
 
-        return () => clearInterval(typeWriter);
-    }, [currentIndex, roles, resetTypewriter]);
+        if (!isDeleting && displayText === currentRole) {
+            // Pausar quando terminar de escrever
+            timeout = setTimeout(() => setIsDeleting(true), 2000);
+        } else if (isDeleting && displayText === '') {
+            // Ir para próximo título quando terminar de apagar
+            setIsDeleting(false);
+            setCurrentIndex((prev) => (prev + 1) % ROLES.length);
+        } else {
+            // Escrever ou apagar caracteres
+            const typingSpeed = isDeleting ? 50 : 100;
+            
+            timeout = setTimeout(() => {
+                if (isDeleting) {
+                    setDisplayText(prev => prev.slice(0, -1));
+                } else {
+                    setDisplayText(prev => currentRole.slice(0, prev.length + 1));
+                }
+            }, typingSpeed);
+        }
+
+        return () => clearTimeout(timeout);
+    }, [displayText, currentIndex, isDeleting]);
 
     return(
         <div className="w-full flex flex-col justify-center items-center p-5 gap-8 md:max-w-[80%] mx-auto min-h-screen relative">
@@ -60,10 +63,12 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
                         Hello, I&apos;m Luis 👋
                     </p>
                     
-                    <h1 className="text-4xl lg:text-6xl font-bold text-white dark:text-[#F8F9FA] leading-tight">
-                        {displayText}
-                        <span className="inline-block w-1 h-12 lg:h-16 bg-white ml-2 animate-pulse"></span>
-                    </h1>
+                    <div className="min-h-[80px] lg:min-h-[120px] flex items-center justify-center lg:justify-start">
+                        <h1 className="text-4xl lg:text-6xl font-bold text-white dark:text-[#F8F9FA] leading-tight">
+                            {displayText}
+                            <span className="inline-block w-1 h-12 lg:h-16 bg-white ml-2 animate-pulse"></span>
+                        </h1>
+                    </div>
                     
                     <p className="text-xl text-[#FFFFFFCC] dark:text-[#868E96] max-w-3xl leading-relaxed">
                         Building intelligent solutions that bridge 
