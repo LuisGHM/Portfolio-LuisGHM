@@ -1,6 +1,6 @@
 "use client"
 import { FaDownload, FaArrowRight, FaCode, FaBrain } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface AboutMeProps {
   translations: {
@@ -20,6 +20,12 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
         "Computer Vision Engineer"
     ];
 
+    // Função para resetar o typewriter
+    const resetTypewriter = useCallback(() => {
+        setCurrentIndex((prev) => (prev + 1) % roles.length);
+        setDisplayText("");
+    }, [roles.length]);
+
     useEffect(() => {
         const role = roles[currentIndex];
         let charIndex = 0;
@@ -31,14 +37,13 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
             } else {
                 clearInterval(typeWriter);
                 setTimeout(() => {
-                    setCurrentIndex((prev) => (prev + 1) % roles.length);
-                    setDisplayText("");
+                    resetTypewriter();
                 }, 2000);
             }
         }, 100);
 
         return () => clearInterval(typeWriter);
-    }, [currentIndex]);
+    }, [currentIndex, roles, resetTypewriter]);
 
     return(
         <div className="w-full flex flex-col justify-center items-center p-5 gap-8 md:max-w-[80%] mx-auto min-h-screen relative">
@@ -52,7 +57,7 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
             <div className="space-y-8 relative z-10 text-center lg:text-left max-w-4xl">
                 <div className="space-y-4">
                     <p className="text-[#FFFFFFCC] dark:text-[#868E96] font-medium text-lg">
-                        Hello, I'm Luis 👋
+                        Hello, I&apos;m Luis 👋
                     </p>
                     
                     <h1 className="text-4xl lg:text-6xl font-bold text-white dark:text-[#F8F9FA] leading-tight">
@@ -74,7 +79,7 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
                         <div className="text-[#FFFFFFCC] text-sm">Projects</div>
                     </div>
                     <div className="text-center">
-                        <div className="text-3xl font-bold text-white">1+</div>
+                        <div className="text-3xl font-bold text-white">2+</div>
                         <div className="text-[#FFFFFFCC] text-sm">Years Experience</div>
                     </div>
                     <div className="text-center">

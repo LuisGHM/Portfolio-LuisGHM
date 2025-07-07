@@ -79,21 +79,115 @@ export default function Home() {
     "Kenzie-fullstack-challenge-Front-LuisGHM"
   ];
 
-  const projectsTranslations: Record<string, { name: string; description: string }> = {};
-  
-  projectNames.forEach(projectName => {
-    const tProject = useTranslations(`Projects.${projectName}`);
-    const name = tProject("Name");
-    const description = tProject("Description");
-    
-    // Verificar se tem tradução válida
-    if (!(name.includes("Projects") && name.includes("Name"))) {
-      projectsTranslations[projectName] = {
-        name,
-        description
-      };
+  // CORREÇÃO: Buscar traduções FORA do forEach
+  const tProjectControle = useTranslations("Projects.controle-de-projetos-kenzievelopers-LuisGHM");
+  const tProjectControleFinanceiro = useTranslations("Projects.ControleFinanceiroKenzie");
+  const tProjectCrud = useTranslations("Projects.crud_admin_m4_LuisGHM");
+  const tProjectEcommerce = useTranslations("Projects.EcommerceKenzie");
+  const tProjectHamburgueria = useTranslations("Projects.hamburgueria-Kenzie_LuisGHM");
+  const tProjectKenzieHub = useTranslations("Projects.kenzie-hub-LuisGHM");
+  const tProjectLojaGeek = useTranslations("Projects.LojaGeekKenzie");
+  const tProjectKimoveis = useTranslations("Projects.m4-kimoveis_LuisGHM");
+  const tProjectBandkamp = useTranslations("Projects.m5-Kenzie-bandkamp-generic-view-LuisGHM");
+  const tProjectBuster = useTranslations("Projects.m5-kenzie-buster-LuisGHM");
+  const tProjectKiosque = useTranslations("Projects.m5Kenzie-kiosque-LuisGHM");
+  const tProjectPetKare = useTranslations("Projects.m5Kenzie-pet-kare-LuisGHM");
+  const tProjectKopa = useTranslations("Projects.M5KenzieKopaDoMundo-LuisGHM");
+  const tProjectMarket = useTranslations("Projects.market-sp1-m4-LuisGHM");
+  const tProjectMovies = useTranslations("Projects.movies-sp2-m4_LuisGHM");
+  const tProjectOpenMusic = useTranslations("Projects.OpenMusic-Kenzie");
+  const tProjectPortfolio = useTranslations("Projects.Portifolio-Generico-Kenzie");
+  const tProjectSite = useTranslations("Projects.SiteInstitucionalGenerico");
+  const tProjectNuKenzie = useTranslations("Projects.nu-kenzie_LuisGHM");
+  const tProjectFullstackBack = useTranslations("Projects.Kenzie-fullstack-challenge-Back-LuisGHM");
+  const tProjectFullstackFront = useTranslations("Projects.Kenzie-fullstack-challenge-Front-LuisGHM");
+
+  const projectsTranslations: Record<string, { name: string; description: string }> = {
+    "controle-de-projetos-kenzievelopers-LuisGHM": {
+      name: tProjectControle("Name"),
+      description: tProjectControle("Description")
+    },
+    "ControleFinanceiroKenzie": {
+      name: tProjectControleFinanceiro("Name"),
+      description: tProjectControleFinanceiro("Description")
+    },
+    "crud_admin_m4_LuisGHM": {
+      name: tProjectCrud("Name"),
+      description: tProjectCrud("Description")
+    },
+    "EcommerceKenzie": {
+      name: tProjectEcommerce("Name"),
+      description: tProjectEcommerce("Description")
+    },
+    "hamburgueria-Kenzie_LuisGHM": {
+      name: tProjectHamburgueria("Name"),
+      description: tProjectHamburgueria("Description")
+    },
+    "kenzie-hub-LuisGHM": {
+      name: tProjectKenzieHub("Name"),
+      description: tProjectKenzieHub("Description")
+    },
+    "LojaGeekKenzie": {
+      name: tProjectLojaGeek("Name"),
+      description: tProjectLojaGeek("Description")
+    },
+    "m4-kimoveis_LuisGHM": {
+      name: tProjectKimoveis("Name"),
+      description: tProjectKimoveis("Description")
+    },
+    "m5-Kenzie-bandkamp-generic-view-LuisGHM": {
+      name: tProjectBandkamp("Name"),
+      description: tProjectBandkamp("Description")
+    },
+    "m5-kenzie-buster-LuisGHM": {
+      name: tProjectBuster("Name"),
+      description: tProjectBuster("Description")
+    },
+    "m5Kenzie-kiosque-LuisGHM": {
+      name: tProjectKiosque("Name"),
+      description: tProjectKiosque("Description")
+    },
+    "m5Kenzie-pet-kare-LuisGHM": {
+      name: tProjectPetKare("Name"),
+      description: tProjectPetKare("Description")
+    },
+    "M5KenzieKopaDoMundo-LuisGHM": {
+      name: tProjectKopa("Name"),
+      description: tProjectKopa("Description")
+    },
+    "market-sp1-m4-LuisGHM": {
+      name: tProjectMarket("Name"),
+      description: tProjectMarket("Description")
+    },
+    "movies-sp2-m4_LuisGHM": {
+      name: tProjectMovies("Name"),
+      description: tProjectMovies("Description")
+    },
+    "OpenMusic-Kenzie": {
+      name: tProjectOpenMusic("Name"),
+      description: tProjectOpenMusic("Description")
+    },
+    "Portifolio-Generico-Kenzie": {
+      name: tProjectPortfolio("Name"),
+      description: tProjectPortfolio("Description")
+    },
+    "SiteInstitucionalGenerico": {
+      name: tProjectSite("Name"),
+      description: tProjectSite("Description")
+    },
+    "nu-kenzie_LuisGHM": {
+      name: tProjectNuKenzie("Name"),
+      description: tProjectNuKenzie("Description")
+    },
+    "Kenzie-fullstack-challenge-Back-LuisGHM": {
+      name: tProjectFullstackBack("Name"),
+      description: tProjectFullstackBack("Description")
+    },
+    "Kenzie-fullstack-challenge-Front-LuisGHM": {
+      name: tProjectFullstackFront("Name"),
+      description: tProjectFullstackFront("Description")
     }
-  });
+  };
   
   return(
     <>
