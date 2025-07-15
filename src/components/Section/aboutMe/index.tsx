@@ -1,25 +1,58 @@
 "use client"
 import { FaDownload, FaArrowRight, FaCode, FaBrain } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 interface AboutMeProps {
   translations: {
     projects: string;
     technologies: string;
+    greeting: string;
+    description: string;
+    webTech: string;
+    and: string;
+    ai: string;
+    stats: {
+      projects: string;
+      yearsExp: string;
+      companies: string;
+    };
+    buttons: {
+      downloadCV: string;
+      viewProjects: string;
+    };
+    specializations: {
+      fullStack: string;
+      computerVision: string;
+    };
+    scrollText: string;
   };
 }
 
-const ROLES = [
+const ROLES_EN = [
     "Software Engineer", 
     "Full-Stack Developer", 
     "AI Specialist",
     "Computer Vision Engineer"
 ];
 
+const ROLES_PT = [
+    "Engenheiro de Software",
+    "Desenvolvedor Full-Stack", 
+    "Especialista em IA",
+    "Engenheiro de Visão Computacional"
+];
+
 export const AboutMe = ({ translations }: AboutMeProps) => {
     const [displayText, setDisplayText] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
+
+    const pathname = usePathname();
+    
+    // Detectar idioma atual de forma mais elegante
+    const currentLocale = pathname.startsWith('/pt') ? 'pt' : 'en';
+    const ROLES = currentLocale === 'pt' ? ROLES_PT : ROLES_EN;
 
     useEffect(() => {
         const currentRole = ROLES[currentIndex];
@@ -46,7 +79,7 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
         }
 
         return () => clearTimeout(timeout);
-    }, [displayText, currentIndex, isDeleting]);
+    }, [displayText, currentIndex, isDeleting, ROLES]);
 
     return(
         <div className="w-full flex flex-col justify-center items-center p-5 gap-8 md:max-w-[80%] mx-auto min-h-screen relative">
@@ -60,7 +93,7 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
             <div className="space-y-8 relative z-10 text-center lg:text-left max-w-4xl">
                 <div className="space-y-4">
                     <p className="text-[#FFFFFFCC] dark:text-[#868E96] font-medium text-lg">
-                        Hello, I&apos;m Luis 👋
+                        {translations.greeting}
                     </p>
                     
                     <div className="min-h-[80px] lg:min-h-[120px] flex items-center justify-center lg:justify-start">
@@ -71,9 +104,9 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
                     </div>
                     
                     <p className="text-xl text-[#FFFFFFCC] dark:text-[#868E96] max-w-3xl leading-relaxed">
-                        Building intelligent solutions that bridge 
-                        <span className="text-white font-semibold"> web technologies</span> and 
-                        <span className="text-white font-semibold"> artificial intelligence</span>
+                        {translations.description}{' '}
+                        <span className="text-white font-semibold">{translations.webTech}</span> {translations.and}{' '}
+                        <span className="text-white font-semibold">{translations.ai}</span>
                     </p>
                 </div>
 
@@ -81,15 +114,15 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
                 <div className="flex justify-center lg:justify-start gap-8 py-6">
                     <div className="text-center">
                         <div className="text-3xl font-bold text-white">20+</div>
-                        <div className="text-[#FFFFFFCC] text-sm">Projects</div>
+                        <div className="text-[#FFFFFFCC] text-sm">{translations.stats.projects}</div>
                     </div>
                     <div className="text-center">
                         <div className="text-3xl font-bold text-white">2+</div>
-                        <div className="text-[#FFFFFFCC] text-sm">Years Experience</div>
+                        <div className="text-[#FFFFFFCC] text-sm">{translations.stats.yearsExp}</div>
                     </div>
                     <div className="text-center">
                         <div className="text-3xl font-bold text-white">2</div>
-                        <div className="text-[#FFFFFFCC] text-sm">Companies</div>
+                        <div className="text-[#FFFFFFCC] text-sm">{translations.stats.companies}</div>
                     </div>
                 </div>
 
@@ -101,7 +134,7 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
                         className="group bg-white text-[#5C63ED] px-8 py-4 rounded-lg font-semibold flex items-center gap-3 hover:bg-gray-100 transition-all duration-300 transform hover:translate-y-[-2px] shadow-lg justify-center"
                     >
                         <FaDownload />
-                        Download CV
+                        {translations.buttons.downloadCV}
                         <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                     </a>
                     
@@ -110,7 +143,7 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
                         className="group border-2 border-white text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-3 hover:bg-white hover:text-[#5C63ED] transition-all duration-300 transform hover:translate-y-[-2px] justify-center"
                     >
                         <FaCode />
-                        {translations.projects}
+                        {translations.buttons.viewProjects}
                         <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                     </a>
                 </div>
@@ -119,11 +152,11 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
                 <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
                     <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white flex items-center gap-2">
                         <FaCode size={16} />
-                        Full-Stack Development
+                        {translations.specializations.fullStack}
                     </div>
                     <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white flex items-center gap-2">
                         <FaBrain size={16} />
-                        Computer Vision
+                        {translations.specializations.computerVision}
                     </div>
                 </div>
             </div>
@@ -131,7 +164,7 @@ export const AboutMe = ({ translations }: AboutMeProps) => {
             {/* Scroll Indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
                 <div className="flex flex-col items-center gap-2">
-                    <span className="text-sm">Scroll to explore</span>
+                    <span className="text-sm">{translations.scrollText}</span>
                     <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
                         <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
                     </div>

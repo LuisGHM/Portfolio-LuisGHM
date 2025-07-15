@@ -2,56 +2,99 @@
 import { FaCode, FaServer, FaBrain, FaTools } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 
-const DetailedSkills = () => {
+interface DetailedSkillsProps {
+  translations: {
+    sectionTitle: string;
+    title: string;
+    subtitle: string;
+    categories: {
+      frontend: string;
+      backend: string;
+      ai: string;
+      tools: string;
+    };
+    skillsList: {
+      frontend: {
+        react: string;
+        nextJS: string;
+        typeScript: string;
+        tailwindCSS: string;
+        javaScript: string;
+      };
+      backend: {
+        python: string;
+        djangoREST: string;
+        fastAPI: string;
+        postgreSQL: string;
+        restfulAPIs: string;
+      };
+      ai: {
+        tensorFlow: string;
+        keras: string;
+        yolov11: string;
+        vgg16: string;
+        cvae: string;
+      };
+      tools: {
+        gitGitHub: string;
+        docker: string;
+        scikitLearn: string;
+        dataAnalysis: string;
+      };
+    };
+  };
+}
+
+const DetailedSkills = ({ translations }: DetailedSkillsProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: translations.categories.frontend,
       icon: <FaCode />,
       color: "bg-blue-500",
       skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "TypeScript", level: 85 },
-        { name: "Tailwind CSS", level: 80 },
-        { name: "JavaScript", level: 90 }
+        { name: translations.skillsList.frontend.react, level: 90 },
+        { name: translations.skillsList.frontend.nextJS, level: 85 },
+        { name: translations.skillsList.frontend.typeScript, level: 85 },
+        { name: translations.skillsList.frontend.tailwindCSS, level: 80 },
+        { name: translations.skillsList.frontend.javaScript, level: 90 }
       ]
     },
     {
-      title: "Backend Development", 
+      title: translations.categories.backend, 
       icon: <FaServer />,
       color: "bg-green-500",
       skills: [
-        { name: "Python", level: 90 },
-        { name: "Django REST", level: 85 },
-        { name: "FastAPI", level: 80 },
-        { name: "PostgreSQL", level: 85 },
-        { name: "RESTful APIs", level: 90 }
+        { name: translations.skillsList.backend.python, level: 90 },
+        { name: translations.skillsList.backend.djangoREST, level: 85 },
+        { name: translations.skillsList.backend.fastAPI, level: 80 },
+        { name: translations.skillsList.backend.postgreSQL, level: 85 },
+        { name: translations.skillsList.backend.restfulAPIs, level: 90 }
       ]
     },
     {
-      title: "AI & Computer Vision",
+      title: translations.categories.ai,
       icon: <FaBrain />,
       color: "bg-purple-500", 
       skills: [
-        { name: "TensorFlow", level: 85 },
-        { name: "Keras", level: 80 },
-        { name: "YOLOv11", level: 75 },
-        { name: "VGG16", level: 70 },
-        { name: "CVAE", level: 75 }
+        { name: translations.skillsList.ai.tensorFlow, level: 85 },
+        { name: translations.skillsList.ai.keras, level: 80 },
+        { name: translations.skillsList.ai.yolov11, level: 75 },
+        { name: translations.skillsList.ai.vgg16, level: 70 },
+        { name: translations.skillsList.ai.cvae, level: 75 }
       ]
     },
     {
-      title: "Tools & Others",
+      title: translations.categories.tools,
       icon: <FaTools />,
       color: "bg-orange-500",
       skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "Docker", level: 70 },
-        { name: "Scikit-Learn", level: 80 },
-        { name: "Data Analysis", level: 85 }
+        { name: translations.skillsList.tools.gitGitHub, level: 90 },
+        { name: translations.skillsList.tools.docker, level: 70 },
+        { name: translations.skillsList.tools.scikitLearn, level: 80 },
+        { name: translations.skillsList.tools.dataAnalysis, level: 85 }
       ]
     }
   ];
@@ -83,13 +126,13 @@ const DetailedSkills = () => {
       <div className="max-w-[80%] mx-auto px-5">
         <div className="mb-12">
           <p className="font-semibold text-base text-[#495057] dark:text-[#F8F9FA] mb-2">
-            SKILLS
+            {translations.sectionTitle}
           </p>
           <h2 className="text-3xl font-bold text-[#2D2E4D] dark:text-[#623CEA] mb-4">
-            Technical Expertise
+            {translations.title}
           </h2>
           <p className="text-[#495057] dark:text-[#868E96] max-w-2xl">
-            Expertise across the full technology stack with specialization in AI and computer vision
+            {translations.subtitle}
           </p>
         </div>
 

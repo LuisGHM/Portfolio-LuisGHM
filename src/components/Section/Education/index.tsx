@@ -1,22 +1,49 @@
 import { FaGraduationCap, FaUniversity } from "react-icons/fa";
 
-const Education = () => {
+interface EducationProps {
+  translations: {
+    sectionTitle: string;
+    title: string;
+    subtitle: string;
+    focusLabel: string;
+    degrees: {
+      masters: {
+        degree: string;
+        school: string;
+        period: string;
+        focus: string;
+        status: string;
+        description: string;
+      };
+      bachelor: {
+        degree: string;
+        school: string;
+        period: string;
+        focus: string;
+        status: string;
+        description: string;
+      };
+    };
+  };
+}
+
+const Education = ({ translations }: EducationProps) => {
   const education = [
     {
-      degree: "Master's in Electrical Engineering & Industrial Computer Science (CPGEI)",
-      school: "UTFPR (Federal University of Technology - Paraná)",
-      period: "2025 - Present",
-      focus: "Computer Vision & Machine Learning",
-      status: "In Progress",
-      description: "Advanced research in computer vision applications, focusing on deep learning models for image classification and object detection."
+      degree: translations.degrees.masters.degree,
+      school: translations.degrees.masters.school,
+      period: translations.degrees.masters.period,
+      focus: translations.degrees.masters.focus,
+      status: translations.degrees.masters.status,
+      description: translations.degrees.masters.description
     },
     {
-      degree: "Bachelor's in Software Engineering", 
-      school: "UniBrasil",
-      period: "2020 - 2024",
-      focus: "Full-Stack Development & Software Architecture",
-      status: "Completed",
-      description: "Comprehensive software engineering education covering web development, database design, software architecture, and project management."
+      degree: translations.degrees.bachelor.degree, 
+      school: translations.degrees.bachelor.school,
+      period: translations.degrees.bachelor.period,
+      focus: translations.degrees.bachelor.focus,
+      status: translations.degrees.bachelor.status,
+      description: translations.degrees.bachelor.description
     }
   ];
 
@@ -25,13 +52,13 @@ const Education = () => {
       <div className="max-w-[80%] mx-auto px-5">
         <div className="mb-12">
           <p className="font-semibold text-base text-[#495057] dark:text-[#F8F9FA] mb-2">
-            EDUCATION
+            {translations.sectionTitle}
           </p>
           <h2 className="text-3xl font-bold text-[#2D2E4D] dark:text-[#623CEA] mb-4">
-            Academic Background
+            {translations.title}
           </h2>
           <p className="text-[#495057] dark:text-[#868E96] max-w-2xl">
-            Academic foundation in software engineering and advanced AI research
+            {translations.subtitle}
           </p>
         </div>
 
@@ -49,7 +76,7 @@ const Education = () => {
                       {edu.degree}
                     </h3>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ml-2 ${
-                      edu.status === 'Completed' 
+                      edu.status === 'Completed' || edu.status === 'Concluído'
                         ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
                         : 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400'
                     }`}>
@@ -65,7 +92,7 @@ const Education = () => {
                   <p className="text-sm text-[#868E96] mb-3">{edu.period}</p>
                   
                   <p className="text-[#495057] dark:text-[#868E96] italic mb-3">
-                    <strong>Focus:</strong> {edu.focus}
+                    <strong>{translations.focusLabel}</strong> {edu.focus}
                   </p>
                   
                   <p className="text-sm text-[#495057] dark:text-[#868E96] leading-relaxed">

@@ -21,12 +21,137 @@ export default function Home() {
   
   const t3 = useTranslations("Footer")
   
+  // AboutMe translations
   const tAbout = useTranslations("AboutMe");
   const aboutTranslations = {
     projects: tAbout("Projects"),
-    technologies: tAbout("Technologies")
+    technologies: tAbout("Technologies"),
+    greeting: tAbout("Greeting"),
+    description: tAbout("Description"),
+    webTech: tAbout("WebTech"),
+    and: tAbout("And"),
+    ai: tAbout("AI"),
+    stats: {
+      projects: tAbout("Stats.Projects"),
+      yearsExp: tAbout("Stats.YearsExp"),
+      companies: tAbout("Stats.Companies")
+    },
+    buttons: {
+      downloadCV: tAbout("Buttons.DownloadCV"),
+      viewProjects: tAbout("Buttons.ViewProjects")
+    },
+    specializations: {
+      fullStack: tAbout("Specializations.FullStack"),
+      computerVision: tAbout("Specializations.ComputerVision")
+    },
+    scrollText: tAbout("ScrollText")
   };
 
+  // Experience translations
+  const tExperience = useTranslations("Experience");
+  const experienceTranslations = {
+    sectionTitle: tExperience("SectionTitle"),
+    title: tExperience("Title"),
+    subtitle: tExperience("Subtitle"),
+    companies: {
+      stylest: {
+        company: tExperience("Companies.Stylest.Company"),
+        position: tExperience("Companies.Stylest.Position"),
+        period: tExperience("Companies.Stylest.Period"),
+        location: tExperience("Companies.Stylest.Location"),
+        highlights: [
+          tExperience("Companies.Stylest.Highlights.0"),
+          tExperience("Companies.Stylest.Highlights.1"),
+          tExperience("Companies.Stylest.Highlights.2"),
+          tExperience("Companies.Stylest.Highlights.3")
+        ]
+      },
+      kpercon: {
+        company: tExperience("Companies.Kpercon.Company"),
+        position: tExperience("Companies.Kpercon.Position"),
+        period: tExperience("Companies.Kpercon.Period"),
+        location: tExperience("Companies.Kpercon.Location"),
+        highlights: [
+          tExperience("Companies.Kpercon.Highlights.0"),
+          tExperience("Companies.Kpercon.Highlights.1"),
+          tExperience("Companies.Kpercon.Highlights.2"),
+          tExperience("Companies.Kpercon.Highlights.3")
+        ]
+      }
+    }
+  };
+
+  // Education translations
+  const tEducation = useTranslations("Education");
+  const educationTranslations = {
+    sectionTitle: tEducation("SectionTitle"),
+    title: tEducation("Title"),
+    subtitle: tEducation("Subtitle"),
+    focusLabel: tEducation("FocusLabel"),
+    degrees: {
+      masters: {
+        degree: tEducation("Degrees.Masters.Degree"),
+        school: tEducation("Degrees.Masters.School"),
+        period: tEducation("Degrees.Masters.Period"),
+        focus: tEducation("Degrees.Masters.Focus"),
+        status: tEducation("Degrees.Masters.Status"),
+        description: tEducation("Degrees.Masters.Description")
+      },
+      bachelor: {
+        degree: tEducation("Degrees.Bachelor.Degree"),
+        school: tEducation("Degrees.Bachelor.School"),
+        period: tEducation("Degrees.Bachelor.Period"),
+        focus: tEducation("Degrees.Bachelor.Focus"),
+        status: tEducation("Degrees.Bachelor.Status"),
+        description: tEducation("Degrees.Bachelor.Description")
+      }
+    }
+  };
+
+  // Skills translations
+  const tSkills = useTranslations("Skills");
+  const skillsTranslations = {
+    sectionTitle: tSkills("SectionTitle"),
+    title: tSkills("Title"),
+    subtitle: tSkills("Subtitle"),
+    categories: {
+      frontend: tSkills("Categories.Frontend"),
+      backend: tSkills("Categories.Backend"),
+      ai: tSkills("Categories.AI"),
+      tools: tSkills("Categories.Tools")
+    },
+    skillsList: {
+      frontend: {
+        react: tSkills("SkillsList.Frontend.React"),
+        nextJS: tSkills("SkillsList.Frontend.NextJS"),
+        typeScript: tSkills("SkillsList.Frontend.TypeScript"),
+        tailwindCSS: tSkills("SkillsList.Frontend.TailwindCSS"),
+        javaScript: tSkills("SkillsList.Frontend.JavaScript")
+      },
+      backend: {
+        python: tSkills("SkillsList.Backend.Python"),
+        djangoREST: tSkills("SkillsList.Backend.DjangoREST"),
+        fastAPI: tSkills("SkillsList.Backend.FastAPI"),
+        postgreSQL: tSkills("SkillsList.Backend.PostgreSQL"),
+        restfulAPIs: tSkills("SkillsList.Backend.RESTfulAPIs")
+      },
+      ai: {
+        tensorFlow: tSkills("SkillsList.AI.TensorFlow"),
+        keras: tSkills("SkillsList.AI.Keras"),
+        yolov11: tSkills("SkillsList.AI.YOLOv11"),
+        vgg16: tSkills("SkillsList.AI.VGG16"),
+        cvae: tSkills("SkillsList.AI.CVAE")
+      },
+      tools: {
+        gitGitHub: tSkills("SkillsList.Tools.GitGitHub"),
+        docker: tSkills("SkillsList.Tools.Docker"),
+        scikitLearn: tSkills("SkillsList.Tools.ScikitLearn"),
+        dataAnalysis: tSkills("SkillsList.Tools.DataAnalysis")
+      }
+    }
+  };
+
+  // Contact translations
   const tContact = useTranslations("Contact");
   const contactTranslations = {
     title: tContact("Title"),
@@ -44,7 +169,7 @@ export default function Home() {
     whatsApp: tContact("WhatsApp")
   };
 
-  // Traduções dos projetos
+  // Projects translations
   const tProjects = useTranslations("Projects");
   const projectsGeneralTranslations = {
     origin: tProjects("origin"),
@@ -54,140 +179,27 @@ export default function Home() {
     application: tProjects("application")
   };
 
-  // Lista de projetos com traduções (aqueles que têm tradução no JSON)
-  const projectNames = [
+  // Lista dos principais projetos
+  const mainProjects = [
     "controle-de-projetos-kenzievelopers-LuisGHM",
-    "ControleFinanceiroKenzie",
-    "crud_admin_m4_LuisGHM",
-    "EcommerceKenzie",
+    "m4-kimoveis_LuisGHM",
+    "m5-kenzie-buster-LuisGHM",
     "hamburgueria-Kenzie_LuisGHM",
     "kenzie-hub-LuisGHM",
-    "LojaGeekKenzie",
-    "m4-kimoveis_LuisGHM",
-    "m5-Kenzie-bandkamp-generic-view-LuisGHM",
-    "m5-kenzie-buster-LuisGHM",
-    "m5Kenzie-kiosque-LuisGHM",
-    "m5Kenzie-pet-kare-LuisGHM",
-    "M5KenzieKopaDoMundo-LuisGHM",
-    "market-sp1-m4-LuisGHM",
-    "movies-sp2-m4_LuisGHM",
-    "OpenMusic-Kenzie",
-    "Portifolio-Generico-Kenzie",
-    "SiteInstitucionalGenerico",
-    "nu-kenzie_LuisGHM",
     "Kenzie-fullstack-challenge-Back-LuisGHM",
     "Kenzie-fullstack-challenge-Front-LuisGHM"
   ];
 
-  // CORREÇÃO: Buscar traduções FORA do forEach
-  const tProjectControle = useTranslations("Projects.controle-de-projetos-kenzievelopers-LuisGHM");
-  const tProjectControleFinanceiro = useTranslations("Projects.ControleFinanceiroKenzie");
-  const tProjectCrud = useTranslations("Projects.crud_admin_m4_LuisGHM");
-  const tProjectEcommerce = useTranslations("Projects.EcommerceKenzie");
-  const tProjectHamburgueria = useTranslations("Projects.hamburgueria-Kenzie_LuisGHM");
-  const tProjectKenzieHub = useTranslations("Projects.kenzie-hub-LuisGHM");
-  const tProjectLojaGeek = useTranslations("Projects.LojaGeekKenzie");
-  const tProjectKimoveis = useTranslations("Projects.m4-kimoveis_LuisGHM");
-  const tProjectBandkamp = useTranslations("Projects.m5-Kenzie-bandkamp-generic-view-LuisGHM");
-  const tProjectBuster = useTranslations("Projects.m5-kenzie-buster-LuisGHM");
-  const tProjectKiosque = useTranslations("Projects.m5Kenzie-kiosque-LuisGHM");
-  const tProjectPetKare = useTranslations("Projects.m5Kenzie-pet-kare-LuisGHM");
-  const tProjectKopa = useTranslations("Projects.M5KenzieKopaDoMundo-LuisGHM");
-  const tProjectMarket = useTranslations("Projects.market-sp1-m4-LuisGHM");
-  const tProjectMovies = useTranslations("Projects.movies-sp2-m4_LuisGHM");
-  const tProjectOpenMusic = useTranslations("Projects.OpenMusic-Kenzie");
-  const tProjectPortfolio = useTranslations("Projects.Portifolio-Generico-Kenzie");
-  const tProjectSite = useTranslations("Projects.SiteInstitucionalGenerico");
-  const tProjectNuKenzie = useTranslations("Projects.nu-kenzie_LuisGHM");
-  const tProjectFullstackBack = useTranslations("Projects.Kenzie-fullstack-challenge-Back-LuisGHM");
-  const tProjectFullstackFront = useTranslations("Projects.Kenzie-fullstack-challenge-Front-LuisGHM");
-
-  const projectsTranslations: Record<string, { name: string; description: string }> = {
-    "controle-de-projetos-kenzievelopers-LuisGHM": {
-      name: tProjectControle("Name"),
-      description: tProjectControle("Description")
-    },
-    "ControleFinanceiroKenzie": {
-      name: tProjectControleFinanceiro("Name"),
-      description: tProjectControleFinanceiro("Description")
-    },
-    "crud_admin_m4_LuisGHM": {
-      name: tProjectCrud("Name"),
-      description: tProjectCrud("Description")
-    },
-    "EcommerceKenzie": {
-      name: tProjectEcommerce("Name"),
-      description: tProjectEcommerce("Description")
-    },
-    "hamburgueria-Kenzie_LuisGHM": {
-      name: tProjectHamburgueria("Name"),
-      description: tProjectHamburgueria("Description")
-    },
-    "kenzie-hub-LuisGHM": {
-      name: tProjectKenzieHub("Name"),
-      description: tProjectKenzieHub("Description")
-    },
-    "LojaGeekKenzie": {
-      name: tProjectLojaGeek("Name"),
-      description: tProjectLojaGeek("Description")
-    },
-    "m4-kimoveis_LuisGHM": {
-      name: tProjectKimoveis("Name"),
-      description: tProjectKimoveis("Description")
-    },
-    "m5-Kenzie-bandkamp-generic-view-LuisGHM": {
-      name: tProjectBandkamp("Name"),
-      description: tProjectBandkamp("Description")
-    },
-    "m5-kenzie-buster-LuisGHM": {
-      name: tProjectBuster("Name"),
-      description: tProjectBuster("Description")
-    },
-    "m5Kenzie-kiosque-LuisGHM": {
-      name: tProjectKiosque("Name"),
-      description: tProjectKiosque("Description")
-    },
-    "m5Kenzie-pet-kare-LuisGHM": {
-      name: tProjectPetKare("Name"),
-      description: tProjectPetKare("Description")
-    },
-    "M5KenzieKopaDoMundo-LuisGHM": {
-      name: tProjectKopa("Name"),
-      description: tProjectKopa("Description")
-    },
-    "market-sp1-m4-LuisGHM": {
-      name: tProjectMarket("Name"),
-      description: tProjectMarket("Description")
-    },
-    "movies-sp2-m4_LuisGHM": {
-      name: tProjectMovies("Name"),
-      description: tProjectMovies("Description")
-    },
-    "OpenMusic-Kenzie": {
-      name: tProjectOpenMusic("Name"),
-      description: tProjectOpenMusic("Description")
-    },
-    "Portifolio-Generico-Kenzie": {
-      name: tProjectPortfolio("Name"),
-      description: tProjectPortfolio("Description")
-    },
-    "SiteInstitucionalGenerico": {
-      name: tProjectSite("Name"),
-      description: tProjectSite("Description")
-    },
-    "nu-kenzie_LuisGHM": {
-      name: tProjectNuKenzie("Name"),
-      description: tProjectNuKenzie("Description")
-    },
-    "Kenzie-fullstack-challenge-Back-LuisGHM": {
-      name: tProjectFullstackBack("Name"),
-      description: tProjectFullstackBack("Description")
-    },
-    "Kenzie-fullstack-challenge-Front-LuisGHM": {
-      name: tProjectFullstackFront("Name"),
-      description: tProjectFullstackFront("Description")
-    }
-  };
+  // Criar objeto de traduções de projetos
+  const projectsTranslations: Record<string, { name: string; description: string }> = {};
+  
+  mainProjects.forEach(projectKey => {
+    const projectT = useTranslations(`Projects.${projectKey}`);
+    projectsTranslations[projectKey] = {
+      name: projectT("Name"),
+      description: projectT("Description")
+    };
+  });
   
   return(
     <>
@@ -200,15 +212,15 @@ export default function Home() {
       </section>
       
       <section className="bg-white dark:bg-[#121214]">
-        <Experience/>
+        <Experience translations={experienceTranslations} />
       </section>
       
       <section className="bg-[#F1F3F5] dark:bg-[#0A0A0B]">
-        <Education/>
+        <Education translations={educationTranslations} />
       </section>
       
       <section className="bg-white dark:bg-[#121214]">
-        <DetailedSkills/>
+        <DetailedSkills translations={skillsTranslations} />
       </section>
       
       <section className="bg-[#F1F3F5] dark:bg-[#0A0A0B]">

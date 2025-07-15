@@ -1,32 +1,47 @@
 import { FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
 
-const Experience = () => {
+interface ExperienceProps {
+  translations: {
+    sectionTitle: string;
+    title: string;
+    subtitle: string;
+    companies: {
+      stylest: {
+        company: string;
+        position: string;
+        period: string;
+        location: string;
+        highlights: string[];
+      };
+      kpercon: {
+        company: string;
+        position: string;
+        period: string;
+        location: string;
+        highlights: string[];
+      };
+    };
+  };
+}
+
+const Experience = ({ translations }: ExperienceProps) => {
+  // Array de experiências usando as traduções
   const experiences = [
     {
-      company: "Stylest.IA",
-      position: "AI/Computer Vision Engineer",
-      period: "2024 - Present",
-      location: "Curitiba, PR",
+      company: translations.companies.stylest.company,
+      position: translations.companies.stylest.position,
+      period: translations.companies.stylest.period,
+      location: translations.companies.stylest.location,
       technologies: ["Python", "TensorFlow", "YOLOv11", "FastAPI", "Computer Vision"],
-      highlights: [
-        "Developed clothing recommendation system using CVAE (Conditional Variational Autoencoder)",
-        "Implemented object detection with YOLOv11 for fashion item classification",
-        "Built and deployed ML models with FastAPI for real-time inference",
-        "Processed and curated large datasets for training deep learning models"
-      ]
+      highlights: translations.companies.stylest.highlights
     },
     {
-      company: "KPERCON SISTEMAS",
-      position: "Full-Stack Developer",
-      period: "2023 - Present", 
-      location: "Curitiba, PR",
+      company: translations.companies.kpercon.company,
+      position: translations.companies.kpercon.position,
+      period: translations.companies.kpercon.period,
+      location: translations.companies.kpercon.location,
       technologies: ["React", "Next.js", "Django", "PostgreSQL", "TypeScript"],
-      highlights: [
-        "Built responsive web applications with React/Next.js and modern UI libraries",
-        "Developed RESTful APIs with Django REST Framework for scalable backend systems",
-        "Optimized database performance with PostgreSQL and complex query optimization",
-        "Implemented authentication systems and role-based access control"
-      ]
+      highlights: translations.companies.kpercon.highlights
     }
   ];
 
@@ -35,13 +50,13 @@ const Experience = () => {
       <div className="max-w-[80%] mx-auto px-5">
         <div className="mb-12">
           <p className="font-semibold text-base text-[#495057] dark:text-[#F8F9FA] mb-2">
-            EXPERIENCE
+            {translations.sectionTitle}
           </p>
           <h2 className="text-3xl font-bold text-[#2D2E4D] dark:text-[#623CEA] mb-4">
-            Professional Journey
+            {translations.title}
           </h2>
           <p className="text-[#495057] dark:text-[#868E96] max-w-2xl">
-            Building impactful solutions across web development and artificial intelligence
+            {translations.subtitle}
           </p>
         </div>
 
