@@ -8,19 +8,121 @@
     "Title": "Creating experiences through technology",
     "Text": "I am a software engineering student at UniBrasil college. Currently, I am enrolled in the full-stack programming program at Kenzie Academy Brazil.",
     "Projects": "Projects",
-    "Technologies": "Technologies"
+    "Technologies": "Technologies",
+    "Greeting": "Hello, I'm Luis 👋",
+    "Description": "Building intelligent solutions that bridge",
+    "WebTech": "web technologies",
+    "And": "and",
+    "AI": "artificial intelligence",
+    "Stats": {
+      "Projects": "Projects",
+      "YearsExp": "Years Experience",
+      "Companies": "Companies"
+    },
+    "Buttons": {
+      "DownloadCV": "Download CV",
+      "ViewProjects": "Projects"
+    },
+    "Specializations": {
+      "FullStack": "Full-Stack Development",
+      "ComputerVision": "Computer Vision"
+    },
+    "ScrollText": "Scroll to explore"
   },
   "Experience": {
     "Title": "Professional Journey",
-    "Subtitle": "Building impactful solutions across web development and artificial intelligence"
+    "Subtitle": "Building impactful solutions across web development and artificial intelligence",
+    "SectionTitle": "EXPERIENCE",
+    "Companies": {
+      "Stylest": {
+        "Company": "Stylest.IA",
+        "Position": "AI/Computer Vision Engineer",
+        "Period": "2024 - Present",
+        "Location": "Curitiba, PR",
+        "Highlights": [
+          "Developed clothing recommendation system using CVAE (Conditional Variational Autoencoder)",
+          "Implemented object detection with YOLOv11 for fashion item classification",
+          "Built and deployed ML models with FastAPI for real-time inference",
+          "Processed and curated large datasets for training deep learning models"
+        ]
+      },
+      "Kpercon": {
+        "Company": "KPERCON SISTEMAS",
+        "Position": "Full-Stack Developer", 
+        "Period": "2023 - Present",
+        "Location": "Curitiba, PR",
+        "Highlights": [
+          "Built responsive web applications with React/Next.js and modern UI libraries",
+          "Developed RESTful APIs with Django REST Framework for scalable backend systems",
+          "Optimized database performance with PostgreSQL and complex query optimization",
+          "Implemented authentication systems and role-based access control"
+        ]
+      }
+    }
   },
   "Education": {
     "Title": "Academic Background",
-    "Subtitle": "Academic foundation in software engineering and advanced AI research"
+    "Subtitle": "Academic foundation in software engineering and advanced AI research",
+    "SectionTitle": "EDUCATION",
+    "FocusLabel": "Focus:",
+    "Degrees": {
+      "Masters": {
+        "Degree": "Master's in Electrical Engineering & Industrial Computer Science (CPGEI)",
+        "School": "UTFPR (Federal University of Technology - Paraná)",
+        "Period": "2025 - Present",
+        "Focus": "Computer Vision & Machine Learning",
+        "Status": "In Progress",
+        "Description": "Advanced research in computer vision applications, focusing on deep learning models for image classification and object detection."
+      },
+      "Bachelor": {
+        "Degree": "Bachelor's in Software Engineering",
+        "School": "UniBrasil", 
+        "Period": "2020 - 2024",
+        "Focus": "Full-Stack Development & Software Architecture",
+        "Status": "Completed",
+        "Description": "Comprehensive software engineering education covering web development, database design, software architecture, and project management."
+      }
+    }
   },
   "Skills": {
     "Title": "Technical Expertise",
-    "Subtitle": "Expertise across the full technology stack with specialization in AI and computer vision"
+    "Subtitle": "Expertise across the full technology stack with specialization in AI and computer vision",
+    "SectionTitle": "SKILLS",
+    "Categories": {
+      "Frontend": "Frontend Development",
+      "Backend": "Backend Development", 
+      "AI": "AI & Computer Vision",
+      "Tools": "Tools & Others"
+    },
+    "SkillsList": {
+      "Frontend": {
+        "React": "React",
+        "NextJS": "Next.js",
+        "TypeScript": "TypeScript", 
+        "TailwindCSS": "Tailwind CSS",
+        "JavaScript": "JavaScript"
+      },
+      "Backend": {
+        "Python": "Python",
+        "DjangoREST": "Django REST",
+        "FastAPI": "FastAPI",
+        "PostgreSQL": "PostgreSQL",
+        "RESTfulAPIs": "RESTful APIs"
+      },
+      "AI": {
+        "TensorFlow": "TensorFlow",
+        "Keras": "Keras",
+        "YOLOv11": "YOLOv11",
+        "VGG16": "VGG16",
+        "CVAE": "CVAE"
+      },
+      "Tools": {
+        "GitGitHub": "Git/GitHub",
+        "Docker": "Docker",
+        "ScikitLearn": "Scikit-Learn",
+        "DataAnalysis": "Data Analysis"
+      }
+    }
   },
   "Contact": {
     "Title": "Let's Work Together",
@@ -47,6 +149,8 @@
     "detail": "in every detail",
     "language": "Languages",
     "application": "Application",
+    "SectionTitle": "PROJECTS",
+    "Description": "A collection of projects showcasing my expertise in full-stack development, AI, and computer vision",
     "controle-de-projetos-kenzievelopers-LuisGHM": {
       "Name": "Project Control",
       "Description": "The Project Control - KenzieVelopers is a Rest API developed to facilitate the management of developers and projects in a technology and web development startup. Created using TypeScript and integrated with a PostgreSQL database, this application allows the registration of developers, association of extra information to each developer, and management of projects assigned to them."

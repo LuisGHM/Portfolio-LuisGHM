@@ -8,19 +8,121 @@
     "Title": "Criando experiências por meio da tecnologia",
     "Text": "Sou estudante de engenharia de software na faculdade UniBrasil. Atualmente, curso o programa de programação full-stack da Kenzie Academy Brasil.",
     "Projects": "Projetos",
-    "Technologies": "Tecnologias"
+    "Technologies": "Tecnologias",
+    "Greeting": "Olá, sou o Luis 👋",
+    "Description": "Construindo soluções inteligentes que conectam",
+    "WebTech": "tecnologias web",
+    "And": "e",
+    "AI": "inteligência artificial",
+    "Stats": {
+      "Projects": "Projetos",
+      "YearsExp": "Anos de Experiência",
+      "Companies": "Empresas"
+    },
+    "Buttons": {
+      "DownloadCV": "Baixar Currículo",
+      "ViewProjects": "Projetos"
+    },
+    "Specializations": {
+      "FullStack": "Desenvolvimento Full-Stack",
+      "ComputerVision": "Visão Computacional"
+    },
+    "ScrollText": "Role para explorar"
   },
   "Experience": {
     "Title": "Jornada Profissional",
-    "Subtitle": "Construindo soluções impactantes em desenvolvimento web e inteligência artificial"
+    "Subtitle": "Construindo soluções impactantes em desenvolvimento web e inteligência artificial",
+    "SectionTitle": "EXPERIÊNCIA",
+    "Companies": {
+      "Stylest": {
+        "Company": "Stylest.IA",
+        "Position": "Engenheiro de IA/Visão Computacional",
+        "Period": "2024 - Presente",
+        "Location": "Curitiba, PR",
+        "Highlights": [
+          "Desenvolvi sistema de recomendação de roupas usando CVAE (Conditional Variational Autoencoder)",
+          "Implementei detecção de objetos com YOLOv11 para classificação de itens de moda",
+          "Construí e implantei modelos de ML com FastAPI para inferência em tempo real",
+          "Processei e curei grandes datasets para treinamento de modelos de deep learning"
+        ]
+      },
+      "Kpercon": {
+        "Company": "KPERCON SISTEMAS",
+        "Position": "Desenvolvedor Full-Stack",
+        "Period": "2023 - Presente",
+        "Location": "Curitiba, PR",
+        "Highlights": [
+          "Construí aplicações web responsivas com React/Next.js e bibliotecas de UI modernas",
+          "Desenvolvi APIs RESTful com Django REST Framework para sistemas backend escaláveis",
+          "Otimizei performance de banco de dados com PostgreSQL e otimização de queries complexas",
+          "Implementei sistemas de autenticação e controle de acesso baseado em funções"
+        ]
+      }
+    }
   },
   "Education": {
     "Title": "Formação Acadêmica",
-    "Subtitle": "Base acadêmica sólida em engenharia de software e pesquisa avançada em IA"
+    "Subtitle": "Base acadêmica sólida em engenharia de software e pesquisa avançada em IA",
+    "SectionTitle": "EDUCAÇÃO",
+    "Degrees": {
+      "Masters": {
+        "Degree": "Mestrado em Engenharia Elétrica e Informática Industrial (CPGEI)",
+        "School": "UTFPR (Universidade Tecnológica Federal do Paraná)",
+        "Period": "2025 - Presente",
+        "Focus": "Visão Computacional e Machine Learning",
+        "Status": "Em Andamento",
+        "Description": "Pesquisa avançada em aplicações de visão computacional, focando em modelos de deep learning para classificação de imagens e detecção de objetos."
+      },
+      "Bachelor": {
+        "Degree": "Bacharelado em Engenharia de Software",
+        "School": "UniBrasil",
+        "Period": "2020 - 2024",
+        "Focus": "Desenvolvimento Full-Stack e Arquitetura de Software",
+        "Status": "Concluído",
+        "Description": "Educação abrangente em engenharia de software cobrindo desenvolvimento web, design de banco de dados, arquitetura de software e gerenciamento de projetos."
+      }
+    },
+    "FocusLabel": "Foco:"
   },
   "Skills": {
     "Title": "Expertise Técnica",
-    "Subtitle": "Especialização em todo o stack tecnológico com foco em IA e visão computacional"
+    "Subtitle": "Especialização em todo o stack tecnológico com foco em IA e visão computacional",
+    "SectionTitle": "HABILIDADES",
+    "Categories": {
+      "Frontend": "Desenvolvimento Frontend",
+      "Backend": "Desenvolvimento Backend",
+      "AI": "IA e Visão Computacional",
+      "Tools": "Ferramentas e Outros"
+    },
+    "SkillsList": {
+      "Frontend": {
+        "React": "React",
+        "NextJS": "Next.js",
+        "TypeScript": "TypeScript",
+        "TailwindCSS": "Tailwind CSS",
+        "JavaScript": "JavaScript"
+      },
+      "Backend": {
+        "Python": "Python",
+        "DjangoREST": "Django REST",
+        "FastAPI": "FastAPI",
+        "PostgreSQL": "PostgreSQL",
+        "RESTfulAPIs": "APIs RESTful"
+      },
+      "AI": {
+        "TensorFlow": "TensorFlow",
+        "Keras": "Keras",
+        "YOLOv11": "YOLOv11",
+        "VGG16": "VGG16",
+        "CVAE": "CVAE"
+      },
+      "Tools": {
+        "GitGitHub": "Git/GitHub",
+        "Docker": "Docker",
+        "ScikitLearn": "Scikit-Learn",
+        "DataAnalysis": "Análise de Dados"
+      }
+    }
   },
   "Contact": {
     "Title": "Vamos Trabalhar Juntos",
@@ -47,6 +149,8 @@
     "detail": "em cada detalhe",
     "language": "Linguagens",
     "application": "Aplicação",
+    "SectionTitle": "PROJETOS",
+    "Description": "Uma coleção de projetos demonstrando minha expertise em desenvolvimento full-stack, IA e visão computacional",
     "controle-de-projetos-kenzievelopers-LuisGHM": {
       "Name": "Controle de projetos",
       "Description": "O Controle de Projetos - KenzieVelopers é uma API Rest desenvolvida para facilitar a gestão de desenvolvedores e projetos em uma startup de tecnologia e desenvolvimento web. Criada utilizando TypeScript e integrada com um banco de dados PostgreSQL, esta aplicação permite o registro de desenvolvedores, associação de informações extras a cada desenvolvedor e o gerenciamento de projetos atribuídos a eles."
