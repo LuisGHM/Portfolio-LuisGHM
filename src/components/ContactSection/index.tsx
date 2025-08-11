@@ -4,6 +4,7 @@ import { FaEnvelope, FaLinkedin, FaGithub, FaWhatsapp, FaMapMarkerAlt, FaPaperPl
 
 interface ContactSectionProps {
   translations: {
+    sectionTitle: string;
     title: string;
     subtitle: string;
     getInTouch: string;
@@ -17,6 +18,11 @@ interface ContactSectionProps {
     errorMessage: string;
     location: string;
     whatsApp: string;
+    placeholders: {
+      name: string;
+      email: string;
+      message: string;
+    };
   };
 }
 
@@ -33,12 +39,26 @@ const ContactSection = ({ translations }: ContactSectionProps) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission (replace with actual form handler)
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        console.error('Erro ao enviar email:', data.error);
+        setSubmitStatus('error');
+      }
     } catch (error) {
+      console.error('Erro na requisição:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -58,7 +78,7 @@ const ContactSection = ({ translations }: ContactSectionProps) => {
       <div className="max-w-[80%] mx-auto px-5">
         <div className="text-center mb-12">
           <p className="font-semibold text-base text-[#495057] dark:text-[#F8F9FA] mb-2">
-            CONTACT
+            {translations.sectionTitle}
           </p>
           <h2 className="text-3xl font-bold text-[#2D2E4D] dark:text-[#623CEA] mb-4">
             {translations.title}
@@ -152,7 +172,7 @@ const ContactSection = ({ translations }: ContactSectionProps) => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 dark:border-[#1a1a1d] rounded-lg focus:ring-2 focus:ring-[#5C63ED] focus:border-transparent dark:bg-[#0A0A0B] dark:text-[#F8F9FA] transition-colors"
-                  placeholder="Your name"
+                  placeholder={translations.placeholders.name}
                 />
               </div>
 
@@ -168,7 +188,7 @@ const ContactSection = ({ translations }: ContactSectionProps) => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 dark:border-[#1a1a1d] rounded-lg focus:ring-2 focus:ring-[#5C63ED] focus:border-transparent dark:bg-[#0A0A0B] dark:text-[#F8F9FA] transition-colors"
-                  placeholder="your.email@example.com"
+                  placeholder={translations.placeholders.email}
                 />
               </div>
 
@@ -184,7 +204,7 @@ const ContactSection = ({ translations }: ContactSectionProps) => {
                   required
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-[#1a1a1d] rounded-lg focus:ring-2 focus:ring-[#5C63ED] focus:border-transparent dark:bg-[#0A0A0B] dark:text-[#F8F9FA] transition-colors resize-none"
-                  placeholder="Tell me about your project or just say hello..."
+                  placeholder={translations.placeholders.message}
                 />
               </div>
 
