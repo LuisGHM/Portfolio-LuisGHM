@@ -1,14 +1,13 @@
 import axios from "axios";
-import dotenv from "dotenv";
 
-dotenv.config();
-
-const token = process.env.TOKEN;
+// No Next.js, não precisa do dotenv.config()
+// As variáveis de ambiente são automaticamente carregadas
+const token = process.env.TOKEN || process.env.GITHUB_TOKEN;
 
 export const api = axios.create({
     baseURL: "https://api.github.com",
     headers: {
-        Authorization: `Bearer ${token}`
+        ...(token && { Authorization: `Bearer ${token}` })
     },
-    timeout: 8 * 1000,
+    timeout: 15 * 1000, // Aumentei o timeout
 });

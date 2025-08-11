@@ -1,7 +1,7 @@
 "use client"
 import { api } from "@/services/api";
 import { FaGithub, FaExternalLinkAlt, FaStar } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export interface ProjectsCardProps {
     item: {
@@ -29,39 +29,73 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
     const [isHovered, setIsHovered] = useState(false);
     const [languages, setLanguages] = useState<string[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
-    // Categorizar projetos baseado no nome/tecnologias
+    // Categorizar projetos baseado no que cada um realmente é
     const getProjectCategory = () => {
-        const name = item.name.toLowerCase();
-        const description = item.translatedDescription.toLowerCase();
+        const name = item.name;
         
-        if (name.includes('ai') || name.includes('ml') || name.includes('vision') || 
-            name.includes('tensorflow') || description.includes('computer vision') || 
-            description.includes('machine learning') || description.includes('ai') ||
-            description.includes('cvae') || description.includes('yolo')) {
+        // 🤖 AI/Computer Vision - Projetos reais de IA
+        const aiProjects = [
+            'clothing-detection-tools',
+            'curitibaBusRecognition', 
+            'StyleSight'
+        ];
+        
+        // 🛠️ APIs/Backend - APIs e sistemas backend
+        const apiProjects = [
+            'controle-de-projetos-kenzievelopers-LuisGHM', // API REST TypeScript
+            'm5-Kenzie-bandkamp-generic-view-LuisGHM', // API Django
+            'm5-kenzie-buster-LuisGHM', // API robusta
+            'm5Kenzie-pet-kare-LuisGHM', // API para petshop
+            'M5KenzieKopaDoMundo-LuisGHM', // API para campeonato
+            'm5Kenzie-kiosque-LuisGHM', // API para loja de comidas
+            'm4-kimoveis_LuisGHM', // API imobiliária TypeScript
+            'crud_admin_m4_LuisGHM', // API TypeScript com admin
+            'market-sp1-m4-LuisGHM', // API REST TypeScript
+            'movies-sp2-m4_LuisGHM', // API para locadora
+            'TaskManagementAPI', // API de gerenciamento
+            'sistemaEscolar' // Sistema escolar
+        ];
+        
+        // 🚀 Full-Stack - Projetos completos front+back
+        const fullStackProjects = [
+            'Kenzie-fullstack-challenge-Back-LuisGHM',
+            'Kenzie-fullstack-challenge-Front-LuisGHM',
+            'cardealerapp', // App completo
+            'PPAM' // Projeto mobile/web completo
+        ];
+        
+        if (aiProjects.includes(name)) {
             return 'ai';
-        } else if (name.includes('fullstack') || name.includes('full-stack') || 
-                   description.includes('full-stack') || description.includes('fullstack')) {
+        } else if (fullStackProjects.includes(name)) {
             return 'fullstack';
+        } else if (apiProjects.includes(name)) {
+            return 'api';
         }
+        
+        // 🌐 Frontend/Web - Todo o resto (páginas web, apps React, etc.)
         return 'web';
     };
 
-    const categoryColors = {
-        web: 'bg-blue-500',
-        ai: 'bg-purple-500', 
-        fullstack: 'bg-green-500'
+    const categoryColors: Record<'web' | 'api' | 'ai' | 'fullstack', string> = {
+        web: 'bg-blue-500',      // 🌐 Frontend/Web
+        api: 'bg-orange-500',    // 🛠️ APIs/Backend  
+        ai: 'bg-purple-500',     // 🤖 AI/Computer Vision
+        fullstack: 'bg-green-500' // 🚀 Full-Stack
     };
 
-    const categoryLabels = {
-        web: 'Web Development',
+    const categoryLabels: Record<'web' | 'api' | 'ai' | 'fullstack', string> = {
+        web: 'Frontend/Web',
+        api: 'API/Backend',
         ai: 'AI/Computer Vision',
         fullstack: 'Full-Stack'
     };
 
     const fetchLanguages = async () => {
-        if (isLoaded) return languages;
+        if (isLoaded || isLoading) return languages;
         
+        setIsLoading(true);
         try {
             const response = await api.get(`/repos/luisghm/${item.name}/languages`);
             
@@ -73,20 +107,27 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
                 return langArray;
             }
         } catch (error) {
-            console.error("Erro ao obter as linguagens do projeto:", error);
-            return [];
+            // Em caso de erro, usar a linguagem principal se disponível
+            if (item.language) {
+                setLanguages([item.language]);
+            }
+            setIsLoaded(true);
+        } finally {
+            setIsLoading(false);
         }
     };
+
+    // 🚀 MUDANÇA PRINCIPAL: Carregar linguagens assim que o componente monta
+    useEffect(() => {
+        fetchLanguages();
+    }, [item.name]); // Executar quando o nome do projeto mudar
 
     const category = getProjectCategory();
 
     return (
         <div 
             className="group relative bg-white dark:bg-[#0A0A0B] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:translate-y-[-8px] border border-gray-100 dark:border-[#1a1a1d] overflow-hidden max-w-md"
-            onMouseEnter={() => {
-                setIsHovered(true);
-                fetchLanguages();
-            }}
+            onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Project Preview/Header */}
@@ -148,25 +189,43 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
                     </p>
                 </div>
 
-                {/* Technologies */}
-                {languages.length > 0 && (
-                    <div className="mb-4">
-                        <p className="text-xs font-medium text-[#868E96] mb-2">{translations.language}:</p>
-                        <div className="flex flex-wrap gap-2">
-                            {languages.slice(0, 4).map((lang, index) => (
-                                <span 
-                                    key={index}
-                                    className="bg-[#E7E8FC] dark:bg-[#1a1a1d] text-[#5C63ED] dark:text-[#868E96] px-2 py-1 rounded-full text-xs font-medium"
-                                >
-                                    {lang}
-                                </span>
-                            ))}
-                            {languages.length > 4 && (
-                                <span className="text-xs text-[#868E96]">+{languages.length - 4}</span>
-                            )}
-                        </div>
+                {/* Technologies - Sempre mostra a seção, mas com diferentes estados */}
+                <div className="mb-4">
+                    <p className="text-xs font-medium text-[#868E96] mb-2">{translations.language}:</p>
+                    <div className="flex flex-wrap gap-2">
+                        {isLoading ? (
+                            // Estado de loading
+                            <div className="flex gap-2">
+                                <div className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs animate-pulse">
+                                    <span className="opacity-0">Loading...</span>
+                                </div>
+                                <div className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-xs animate-pulse">
+                                    <span className="opacity-0">...</span>
+                                </div>
+                            </div>
+                        ) : languages.length > 0 ? (
+                            // Linguagens carregadas
+                            <>
+                                {languages.slice(0, 4).map((lang, index) => (
+                                    <span 
+                                        key={index}
+                                        className="bg-[#E7E8FC] dark:bg-[#1a1a1d] text-[#5C63ED] dark:text-[#868E96] px-2 py-1 rounded-full text-xs font-medium"
+                                    >
+                                        {lang}
+                                    </span>
+                                ))}
+                                {languages.length > 4 && (
+                                    <span className="text-xs text-[#868E96]">+{languages.length - 4}</span>
+                                )}
+                            </>
+                        ) : (
+                            // Fallback se não conseguir carregar
+                            <span className="bg-[#E7E8FC] dark:bg-[#1a1a1d] text-[#5C63ED] dark:text-[#868E96] px-2 py-1 rounded-full text-xs font-medium">
+                                {item.language || "Mixed"}
+                            </span>
+                        )}
                     </div>
-                )}
+                </div>
 
                 {/* Actions */}
                 <div className="flex justify-between items-center">
