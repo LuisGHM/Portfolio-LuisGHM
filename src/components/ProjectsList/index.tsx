@@ -24,30 +24,38 @@ interface ProjectsListProps {
     application: string;
   };
   projectsTranslations: Record<string, { name: string; description: string }>;
+  sectionTranslations: {
+    sectionTitle: string;
+    title: string;
+    description: string;
+  };
 }
 
-const ProjectsList = async ({ generalTranslations, projectsTranslations }: ProjectsListProps) => {
+const ProjectsList = async ({ generalTranslations, projectsTranslations, sectionTranslations }: ProjectsListProps) => {
   try {
     const response = await api.get("/users/luisghm/repos");
 
     if (response.status === 200) {
       const projects: projectsGit[] = response.data;
 
-      // Filtrar e ordenar projetos
-      const relevantProjects = projects
-        .filter(project => 
-          !project.name.includes('LuisGHM') && 
-          !project.fork &&
-          project.name !== 'LuisGHM' &&
-          projectsTranslations[project.name] // Apenas projetos com tradução
-        )
-        .sort((a, b) => {
-          // Ordenar por: stars > updated_at > name
-          if (a.stargazers_count !== b.stargazers_count) {
-            return b.stargazers_count - a.stargazers_count;
-          }
-          return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-        });
+      // FILTRO CORRIGIDO - Agora só remove projetos específicos que não devem aparecer
+      const filteredProjects = projects.filter(project => {
+        const hasTranslation = !!projectsTranslations[project.name];
+        const isNotFork = !project.fork;
+        // Removido o filtro problemático que excluía projetos com "LuisGHM"
+        // Agora só exclui repositórios específicos que não devem aparecer
+        const isNotExcluded = project.name !== 'LuisGHM'; // Só remove o repo do perfil principal
+        
+        return hasTranslation && isNotFork && isNotExcluded;
+      });
+
+      const relevantProjects = filteredProjects.sort((a, b) => {
+        // Ordenar por: stars > updated_at > name
+        if (a.stargazers_count !== b.stargazers_count) {
+          return b.stargazers_count - a.stargazers_count;
+        }
+        return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+      });
 
       // Adicionar traduções aos projetos
       const projectsWithTranslations = relevantProjects.map(project => ({
@@ -59,15 +67,17 @@ const ProjectsList = async ({ generalTranslations, projectsTranslations }: Proje
       return (
         <section className="py-16" id="project">
           <div className="max-w-[80%] mx-auto px-5">
+            
+            {/* Section Header */}
             <div className="mb-12">
               <p className="font-semibold text-base text-[#495057] dark:text-[#F8F9FA] mb-2">
-                PROJECTS
+                {sectionTranslations.sectionTitle}
               </p>
               <h2 className="text-3xl font-bold text-[#2D2E4D] dark:text-[#623CEA] mb-4">
-                {generalTranslations.origin} <span className="text-[#5C63ED] dark:text-[#7D82F1]">{generalTranslations.dedication}</span> {generalTranslations.detail}
+                {sectionTranslations.title}
               </h2>
-              <p className="text-[#495057] dark:text-[#868E96] max-w-2xl">
-                A collection of projects showcasing my expertise in full-stack development, AI, and computer vision
+              <p className="text-[#495057] dark:text-[#868E96] max-w-3xl">
+                {sectionTranslations.description}
               </p>
             </div>
             
@@ -86,34 +96,55 @@ const ProjectsList = async ({ generalTranslations, projectsTranslations }: Proje
             
             {projectsWithTranslations.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-[#868E96] text-lg">
+                <p className="text-[#868E96] text-lg mb-4">
                   No projects available at the moment.
                 </p>
+                {/* Debug adicional */}
+                {process.env.NODE_ENV === 'development' && (
+                  <div className="text-sm text-gray-500">
+                    <p>Total repositories found: {projects.length}</p>
+                    <p>Projects with translations: {Object.keys(projectsTranslations).length}</p>
+                    <p>Check console for more details</p>
+                  </div>
+                )}
               </div>
             )}
           </div>
         </section>
       );
     } else {
-      console.error("Erro ao obter a lista de projetos. Status:", response.status);
+      console.error("❌ Erro ao obter a lista de projetos. Status:", response.status);
       return (
         <section className="py-16" id="project">
           <div className="max-w-[80%] mx-auto px-5 text-center">
             <p className="text-[#868E96]">
-              Unable to load projects at the moment. Please try again later.
+              Unable to load projects. Status: {response.status}
             </p>
           </div>
         </section>
       );
     }
-  } catch (error) {
-    console.error("Erro ao obter a lista de projetos:", error);
+  } catch (error: any) {
+    console.error("❌ Erro ao obter a lista de projetos:", error);
+    console.error("❌ Detalhes do erro:", {
+      message: error?.message,
+      status: error?.response?.status,
+      statusText: error?.response?.statusText,
+      data: error?.response?.data
+    });
+    
     return (
       <section className="py-16" id="project">
         <div className="max-w-[80%] mx-auto px-5 text-center">
-          <p className="text-[#868E96]">
+          <p className="text-[#868E96] mb-4">
             Unable to load projects at the moment. Please try again later.
           </p>
+          {process.env.NODE_ENV === 'development' && (
+            <div className="text-sm text-red-500">
+              <p>Error: {error?.message}</p>
+              <p>Status: {error?.response?.status}</p>
+            </div>
+          )}
         </div>
       </section>
     );

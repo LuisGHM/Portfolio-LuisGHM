@@ -154,6 +154,7 @@ export default function Home() {
   // Contact translations
   const tContact = useTranslations("Contact");
   const contactTranslations = {
+    sectionTitle: tContact("SectionTitle"),
     title: tContact("Title"),
     subtitle: tContact("Subtitle"),
     getInTouch: tContact("GetInTouch"),
@@ -166,7 +167,12 @@ export default function Home() {
     successMessage: tContact("SuccessMessage"),
     errorMessage: tContact("ErrorMessage"),
     location: tContact("Location"),
-    whatsApp: tContact("WhatsApp")
+    whatsApp: tContact("WhatsApp"),
+    placeholders: {
+      name: tContact("Placeholders.Name"),
+      email: tContact("Placeholders.Email"),
+      message: tContact("Placeholders.Message")
+    }
   };
 
   // Projects translations
@@ -179,26 +185,53 @@ export default function Home() {
     application: tProjects("application")
   };
 
-  // Lista dos principais projetos
-  const mainProjects = [
+  const projectsSectionTranslations = {
+    sectionTitle: tProjects("SectionTitle"),
+    title: tProjects("Title"),
+    description: tProjects("Description")
+  };
+
+  // 🚀 MUDANÇA PRINCIPAL: Buscar TODOS os projetos traduzidos automaticamente
+  const tProjectsSection = useTranslations("Projects");
+  
+  // Lista completa de todos os projetos traduzidos (21 projetos!)
+  const allAvailableProjects = [
     "controle-de-projetos-kenzievelopers-LuisGHM",
-    "m4-kimoveis_LuisGHM",
-    "m5-kenzie-buster-LuisGHM",
+    "ControleFinanceiroKenzie",
+    "crud_admin_m4_LuisGHM",
+    "EcommerceKenzie",
     "hamburgueria-Kenzie_LuisGHM",
     "kenzie-hub-LuisGHM",
+    "LojaGeekKenzie",
+    "m4-kimoveis_LuisGHM",
+    "m5-Kenzie-bandkamp-generic-view-LuisGHM",
+    "m5-kenzie-buster-LuisGHM",
+    "m5Kenzie-kiosque-LuisGHM",
+    "m5Kenzie-pet-kare-LuisGHM",
+    "M5KenzieKopaDoMundo-LuisGHM",
+    "market-sp1-m4-LuisGHM",
+    "movies-sp2-m4_LuisGHM",
+    "OpenMusic-Kenzie",
+    "Portifolio-Generico-Kenzie",
+    "SiteInstitucionalGenerico",
+    "nu-kenzie_LuisGHM",
     "Kenzie-fullstack-challenge-Back-LuisGHM",
     "Kenzie-fullstack-challenge-Front-LuisGHM"
   ];
 
-  // Criar objeto de traduções de projetos
+  // Criar objeto de traduções para TODOS os projetos
   const projectsTranslations: Record<string, { name: string; description: string }> = {};
   
-  mainProjects.forEach(projectKey => {
-    const projectT = useTranslations(`Projects.${projectKey}`);
-    projectsTranslations[projectKey] = {
-      name: projectT("Name"),
-      description: projectT("Description")
-    };
+  allAvailableProjects.forEach(projectKey => {
+    try {
+      const projectT = useTranslations(`Projects.${projectKey}`);
+      projectsTranslations[projectKey] = {
+        name: projectT("Name"),
+        description: projectT("Description")
+      };
+    } catch (error) {
+      console.warn(`⚠️ Tradução não encontrada para projeto: ${projectKey}`);
+    }
   });
   
   return(
@@ -231,6 +264,7 @@ export default function Home() {
         <ProjectsList 
           generalTranslations={projectsGeneralTranslations}
           projectsTranslations={projectsTranslations}
+          sectionTranslations={projectsSectionTranslations}
         />
       </main>
       
