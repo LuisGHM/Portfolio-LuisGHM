@@ -1,7 +1,7 @@
 "use client"
 import { api } from "@/services/api";
 import { FaGithub, FaExternalLinkAlt, FaStar } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export interface ProjectsCardProps {
     item: {
@@ -92,7 +92,7 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
         fullstack: 'Full-Stack'
     };
 
-    const fetchLanguages = async () => {
+    const fetchLanguages = useCallback(async () => {
         if (isLoaded || isLoading) return languages;
         
         setIsLoading(true);
@@ -115,7 +115,7 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
         } finally {
             setIsLoading(false);
         }
-    };
+    }, [item.name, item.language, isLoaded, isLoading, languages]);
 
     // 🚀 MUDANÇA PRINCIPAL: Carregar linguagens assim que o componente monta
     useEffect(() => {
