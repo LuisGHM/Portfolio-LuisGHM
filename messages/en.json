@@ -25,18 +25,18 @@
     },
     "Specializations": {
       "FullStack": "Full-Stack Development",
-      "ComputerVision": "Computer Vision"
+      "ComputerVision": "AI Engineering"
     },
     "ScrollText": "Scroll to explore"
   },
   "Experience": {
     "Title": "Professional Journey",
-    "Subtitle": "Building impactful solutions across web development and artificial intelligence",
+    "Subtitle": "Building impactful solutions across web development and AI engineering",
     "SectionTitle": "EXPERIENCE",
     "Companies": {
       "Stylest": {
         "Company": "Stylest.IA",
-        "Position": "AI/Computer Vision Engineer",
+        "Position": "AI Engineer",
         "Period": "2024 - Present",
         "Location": "Curitiba, PR",
         "Highlights": [
@@ -62,7 +62,7 @@
   },
   "Education": {
     "Title": "Academic Background",
-    "Subtitle": "Academic foundation in software engineering and advanced AI research",
+    "Subtitle": "Academic foundation in software engineering and advanced AI engineering research",
     "SectionTitle": "EDUCATION",
     "FocusLabel": "Focus:",
     "Degrees": {
@@ -70,9 +70,9 @@
         "Degree": "Master's in Electrical Engineering & Industrial Computer Science (CPGEI)",
         "School": "UTFPR (Federal University of Technology - Paraná)",
         "Period": "2025 - Present",
-        "Focus": "Computer Vision & Machine Learning",
+        "Focus": "AI Engineering & Machine Learning",
         "Status": "In Progress",
-        "Description": "Advanced research in computer vision applications, focusing on deep learning models for image classification and object detection."
+        "Description": "Advanced research in AI engineering applications, focusing on deep learning models for image classification, object detection, and intelligent systems."
       },
       "Bachelor": {
         "Degree": "Bachelor's in Software Engineering",
@@ -86,12 +86,12 @@
   },
   "Skills": {
     "Title": "Technical Expertise",
-    "Subtitle": "Expertise across the full technology stack with specialization in AI and computer vision",
+    "Subtitle": "Expertise across the full technology stack with specialization in AI engineering and machine learning",
     "SectionTitle": "SKILLS",
     "Categories": {
       "Frontend": "Frontend Development",
       "Backend": "Backend Development", 
-      "AI": "AI & Computer Vision",
+      "AI": "AI Engineering",
       "Tools": "Tools & Others"
     },
     "SkillsList": {
@@ -125,6 +125,7 @@
     }
   },
   "Contact": {
+    "SectionTitle": "CONTACT",
     "Title": "Let's Work Together",
     "Subtitle": "I'm always interested in new opportunities and exciting projects. Whether you want to discuss a potential collaboration or just say hello, I'd love to hear from you.",
     "GetInTouch": "Get in Touch",
@@ -137,7 +138,12 @@
     "SuccessMessage": "Message sent successfully! I'll get back to you soon.",
     "ErrorMessage": "Failed to send message. Please try again or contact me directly.",
     "Location": "Location",
-    "WhatsApp": "WhatsApp"
+    "WhatsApp": "WhatsApp",
+    "Placeholders": {
+      "Name": "Your name",
+      "Email": "your.email@example.com",
+      "Message": "Tell me about your project or just say hello..."
+    }
   },
   "technologies": {
     "Proficient": "Proficient in"
@@ -148,9 +154,12 @@
     "dedication": "dedication",
     "detail": "in every detail",
     "language": "Languages",
+    "SectionTitle": "PROJECTS",
+    "Title": "My Projects",
+    "Description": "A collection of projects showcasing my expertise in full-stack development and AI engineering",
     "application": "Application",
     "SectionTitle": "PROJECTS",
-    "Description": "A collection of projects showcasing my expertise in full-stack development, AI, and computer vision",
+    "Description": "A collection of projects showcasing my expertise in full-stack development and AI engineering",
     "controle-de-projetos-kenzievelopers-LuisGHM": {
       "Name": "Project Control",
       "Description": "The Project Control - KenzieVelopers is a Rest API developed to facilitate the management of developers and projects in a technology and web development startup. Created using TypeScript and integrated with a PostgreSQL database, this application allows the registration of developers, association of extra information to each developer, and management of projects assigned to them."

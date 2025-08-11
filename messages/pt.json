@@ -25,18 +25,18 @@
     },
     "Specializations": {
       "FullStack": "Desenvolvimento Full-Stack",
-      "ComputerVision": "Visão Computacional"
+      "ComputerVision": "Engenharia de IA"
     },
     "ScrollText": "Role para explorar"
   },
   "Experience": {
     "Title": "Jornada Profissional",
-    "Subtitle": "Construindo soluções impactantes em desenvolvimento web e inteligência artificial",
+    "Subtitle": "Construindo soluções impactantes em desenvolvimento web e engenharia de IA",
     "SectionTitle": "EXPERIÊNCIA",
     "Companies": {
       "Stylest": {
         "Company": "Stylest.IA",
-        "Position": "Engenheiro de IA/Visão Computacional",
+        "Position": "Engenheiro de IA",
         "Period": "2024 - Presente",
         "Location": "Curitiba, PR",
         "Highlights": [
@@ -62,16 +62,16 @@
   },
   "Education": {
     "Title": "Formação Acadêmica",
-    "Subtitle": "Base acadêmica sólida em engenharia de software e pesquisa avançada em IA",
+    "Subtitle": "Base acadêmica sólida em engenharia de software e pesquisa avançada em engenharia de IA",
     "SectionTitle": "EDUCAÇÃO",
     "Degrees": {
       "Masters": {
         "Degree": "Mestrado em Engenharia Elétrica e Informática Industrial (CPGEI)",
         "School": "UTFPR (Universidade Tecnológica Federal do Paraná)",
         "Period": "2025 - Presente",
-        "Focus": "Visão Computacional e Machine Learning",
+        "Focus": "Engenharia de IA e Machine Learning",
         "Status": "Em Andamento",
-        "Description": "Pesquisa avançada em aplicações de visão computacional, focando em modelos de deep learning para classificação de imagens e detecção de objetos."
+        "Description": "Pesquisa avançada em engenharia de IA, focando em modelos de deep learning para classificação de imagens, detecção de objetos e sistemas inteligentes."
       },
       "Bachelor": {
         "Degree": "Bacharelado em Engenharia de Software",
@@ -86,12 +86,12 @@
   },
   "Skills": {
     "Title": "Expertise Técnica",
-    "Subtitle": "Especialização em todo o stack tecnológico com foco em IA e visão computacional",
+    "Subtitle": "Especialização em todo o stack tecnológico com foco em engenharia de IA e machine learning",
     "SectionTitle": "HABILIDADES",
     "Categories": {
       "Frontend": "Desenvolvimento Frontend",
       "Backend": "Desenvolvimento Backend",
-      "AI": "IA e Visão Computacional",
+      "AI": "Engenharia de IA",
       "Tools": "Ferramentas e Outros"
     },
     "SkillsList": {
@@ -125,6 +125,7 @@
     }
   },
   "Contact": {
+    "SectionTitle": "CONTATO",
     "Title": "Vamos Trabalhar Juntos",
     "Subtitle": "Estou sempre interessado em novas oportunidades e projetos empolgantes. Seja para discutir uma possível colaboração ou apenas dizer olá, adoraria ouvir de você.",
     "GetInTouch": "Entre em Contato",
@@ -137,7 +138,12 @@
     "SuccessMessage": "Mensagem enviada com sucesso! Retornarei em breve.",
     "ErrorMessage": "Falha ao enviar mensagem. Tente novamente ou entre em contato diretamente.",
     "Location": "Localização",
-    "WhatsApp": "WhatsApp"
+    "WhatsApp": "WhatsApp",
+    "Placeholders": {
+      "Name": "Seu nome",
+      "Email": "seu.email@exemplo.com",
+      "Message": "Conte-me sobre seu projeto ou apenas diga olá..."
+    }
   },
   "technologies": {
     "Proficient": "Ferramentas que domino"
@@ -150,7 +156,8 @@
     "language": "Linguagens",
     "application": "Aplicação",
     "SectionTitle": "PROJETOS",
-    "Description": "Uma coleção de projetos demonstrando minha expertise em desenvolvimento full-stack, IA e visão computacional",
+    "Title": "Meus Projetos",
+    "Description": "Uma coleção de projetos demonstrando minha expertise em desenvolvimento full-stack e engenharia de IA",
     "controle-de-projetos-kenzievelopers-LuisGHM": {
       "Name": "Controle de projetos",
       "Description": "O Controle de Projetos - KenzieVelopers é uma API Rest desenvolvida para facilitar a gestão de desenvolvedores e projetos em uma startup de tecnologia e desenvolvimento web. Criada utilizando TypeScript e integrada com um banco de dados PostgreSQL, esta aplicação permite o registro de desenvolvedores, associação de informações extras a cada desenvolvedor e o gerenciamento de projetos atribuídos a eles."
