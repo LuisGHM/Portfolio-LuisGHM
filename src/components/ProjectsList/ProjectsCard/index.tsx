@@ -120,7 +120,7 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
     // 🚀 MUDANÇA PRINCIPAL: Carregar linguagens assim que o componente monta
     useEffect(() => {
         fetchLanguages();
-    }, [item.name]); // Executar quando o nome do projeto mudar
+    }, [item.name, fetchLanguages]); // Executar quando o nome do projeto mudar
 
     const category = getProjectCategory();
 

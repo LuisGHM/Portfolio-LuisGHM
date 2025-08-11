@@ -219,15 +219,15 @@ export default function Home() {
     "Kenzie-fullstack-challenge-Front-LuisGHM"
   ];
 
-  // Criar objeto de traduções para TODOS os projetos
+  // Criar objeto de traduções para TODOS os projetos usando hook uma única vez
+  const tProjectsAll = useTranslations("Projects");
   const projectsTranslations: Record<string, { name: string; description: string }> = {};
   
   allAvailableProjects.forEach(projectKey => {
     try {
-      const projectT = useTranslations(`Projects.${projectKey}`);
       projectsTranslations[projectKey] = {
-        name: projectT("Name"),
-        description: projectT("Description")
+        name: tProjectsAll(`${projectKey}.Name`),
+        description: tProjectsAll(`${projectKey}.Description`)
       };
     } catch (error) {
       console.warn(`⚠️ Tradução não encontrada para projeto: ${projectKey}`);
