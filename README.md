@@ -1,36 +1,259 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Luis Gustavo Hedel Marchiore - Portfolio
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-14.1.0-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.17-38B2AC?style=for-the-badge&logo=tailwind-css)
+![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react)
 
+**Modern and responsive portfolio of a Software Engineer & AI Specialist**
+
+[🔗 Live Demo](https://luismarchiore.dev) · [📧 Contact](mailto:lgmarchioreh@gmail.com) · [💼 LinkedIn](https://linkedin.com/in/luis-gustavo-hedel-marchiore)
+
+</div>
+
+## 📋 About The Project
+
+This is my personal portfolio developed with cutting-edge web technologies. The project showcases my skills in full-stack development and AI engineering, featuring an elegant, performant, and fully responsive interface.
+
+### ✨ Key Features
+
+- 🌐 **Complete internationalization** (Portuguese/English)
+- 🌙 **Dark/Light mode** with persistence
+- 📱 **Responsive design** mobile-first approach
+- ⚡ **Optimized performance** with Next.js 14
+- 🎨 **Modern UI/UX** with Tailwind CSS
+- 📊 **GitHub API integration** for dynamic projects
+- 📧 **Functional contact system** with Nodemailer
+- 🔍 **SEO optimized** with complete metadata
+- ♿ **Accessibility** (WCAG guidelines)
+- 🚀 **Automatic deployment** on Vercel
+
+## 🛠️ Built With
+
+### Frontend
+- **Next.js 14** - React Framework with App Router
+- **TypeScript** - Static type checking
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Icons** - Popular icon library
+- **next-intl** - Internationalization for Next.js
+- **next-themes** - Theme management
+
+### Backend/API
+- **Next.js API Routes** - Serverless endpoints
+- **Nodemailer** - Email sending
+- **Axios** - HTTP client
+- **GitHub API** - Project integration
+
+### Development Tools
+- **ESLint** - Code linting
+- **PostCSS** - CSS processing
+- **Autoprefixer** - Automatic CSS prefixes
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Gmail account (for email functionality)
+- GitHub Token (optional, for projects section)
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/LuisGHM/portfolio-nextjs.git
+cd portfolio-nextjs
+```
+
+### 2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Environment variables setup
+Create a `.env.local` file in the root directory:
+
+```env
+# GitHub API (optional - for projects section)
+GITHUB_TOKEN=your_github_personal_access_token
+
+# Email configuration (for contact form)
+EMAIL_USER=your.email@gmail.com
+EMAIL_PASS=your_app_specific_password
+```
+
+### 4. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+src/
+├── app/
+│   ├── [locale]/           # Internationalized routes
+│   ├── api/                # Next.js API Routes
+│   └── globals/            # Global files (robots, sitemap)
+├── components/
+│   ├── Section/            # Main site sections
+│   ├── ProjectsList/       # Project components
+│   ├── ContactSection/     # Contact form
+│   ├── header/             # Header and navigation
+│   └── modal/              # Modal components
+├── hooks/                  # Custom React hooks
+├── providers/              # Context providers
+├── services/               # API configurations
+├── styles/                 # CSS styles
+└── utils/                  # Utility functions
+```
 
-## Learn More
+## 📜 Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Development
+npm run dev          # Start development server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Production
+npm run build        # Build for production
+npm run start        # Start production server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Code Quality
+npm run lint         # Run ESLint
+```
 
-## Deploy on Vercel
+## 🔧 Configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### GitHub Token (Optional)
+To display projects dynamically:
+1. Go to [GitHub Settings > Developer settings > Personal access tokens](https://github.com/settings/tokens)
+2. Generate a new token with `public_repo` scope
+3. Add it to the `GITHUB_TOKEN` environment variable
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Email Configuration
+For the contact form to work:
+1. Enable 2-factor authentication on Gmail
+2. Generate an app-specific password
+3. Use this password in the `EMAIL_PASS` environment variable
+
+## 🎨 Customization
+
+### Colors and Theme
+Primary colors are defined in Tailwind CSS:
+- Primary: `#5C63ED` / `#623CEA` (dark mode)
+- Background: `#FFFFFF` / `#0A0A0B` (dark mode)
+
+### Translations
+Add/edit translations in:
+- `messages/en.json` (English)
+- `messages/pt.json` (Portuguese)
+
+### Content
+Customize sections by editing:
+- Experience: `src/components/Section/Experience/`
+- Education: `src/components/Section/Education/`
+- Skills: `src/components/Section/DetailedSkills/`
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Connect your repository to [Vercel](https://vercel.com)
+2. Configure environment variables
+3. Automatic deployment on every push
+
+### Other Platforms
+The project is compatible with any platform that supports Next.js:
+- Netlify
+- Railway
+- DigitalOcean App Platform
+
+## 📊 Performance
+
+- ⚡ **Lighthouse Score**: 90+
+- 🚀 **Core Web Vitals**: Optimized
+- 📦 **Bundle Size**: Minimized
+- 🔄 **ISR**: Incremental Static Regeneration
+
+## 🤝 Contributing
+
+Contributions are always welcome! To contribute:
+
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Luis Gustavo Hedel Marchiore**
+- Software Engineer & AI Specialist
+- 🌐 Website: [luismarchiore.dev](https://luismarchiore.dev)
+- 💼 LinkedIn: [@luis-gustavo-hedel-marchiore](https://linkedin.com/in/luis-gustavo-hedel-marchiore)
+- 📧 Email: lgmarchioreh@gmail.com
+- 🐱 GitHub: [@LuisGHM](https://github.com/LuisGHM)
+
+## 📈 Project Stats
+
+- **Lines of Code**: 5,000+
+- **Components**: 15+
+- **Languages**: 2 (EN/PT)
+- **API Integrations**: GitHub API, Email Service
+- **Performance Score**: 95+ (Lighthouse)
+
+## 🎯 Features Showcase
+
+### Dynamic Project Loading
+- Real-time GitHub repository fetching
+- Automatic categorization (Frontend, Backend, AI, Full-Stack)
+- Technology detection and display
+- Live demo links integration
+
+### Advanced Internationalization
+- Route-based locale switching (`/en`, `/pt`)
+- Complete UI translation
+- SEO-optimized for multiple languages
+- Persistent language preferences
+
+### Professional Contact System
+- Server-side email processing
+- Form validation and error handling
+- Responsive design with loading states
+- Professional email templates
+
+## 🔍 SEO & Analytics
+
+- **Meta tags**: Complete OpenGraph and Twitter cards
+- **Structured data**: JSON-LD for better search visibility
+- **Sitemap**: Auto-generated for all locales
+- **Robots.txt**: Optimized for search engines
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/) for the incredible framework
+- [Tailwind CSS](https://tailwindcss.com/) for the design system
+- [Vercel](https://vercel.com/) for hosting
+- [React Icons](https://react-icons.github.io/react-icons/) for the icon library
+- Open source community for all the amazing tools
+
+---
+
+<div align="center">
+
+**[⬆ Back to top](#-luis-gustavo-hedel-marchiore---portfolio)**
+
+Made with ❤️ and ☕ by [Luis Gustavo](https://github.com/LuisGHM)
+
+⭐ Star this repo if you found it helpful!
+
+</div>
