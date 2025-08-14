@@ -1,6 +1,6 @@
 "use client"
 import { api } from "@/services/api";
-import { FaGithub, FaExternalLinkAlt, FaStar } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaStar, FaTimes, FaCalendarAlt, FaCodeBranch } from "react-icons/fa";
 import { useState, useEffect, useCallback } from "react";
 
 export interface ProjectsCardProps {
@@ -30,6 +30,7 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
     const [languages, setLanguages] = useState<string[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     // Categorizar projetos baseado no que cada um realmente é
     const getProjectCategory = () => {
@@ -39,7 +40,8 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
         const aiProjects = [
             'clothing-detection-tools',
             'curitibaBusRecognition', 
-            'StyleSight'
+            'StyleSight',
+            'titanic-kaggle-ml'
         ];
         
         // 🛠️ APIs/Backend - APIs e sistemas backend
@@ -97,7 +99,7 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
         
         setIsLoading(true);
         try {
-            const response = await api.get(`/repos/luisghm/${item.name}/languages`);
+            const response = await api.get(`/repos/LuisGHM/${item.name}/languages`);
             
             if (response.status === 200) {
                 const languageData = response.data;
@@ -122,14 +124,45 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
         fetchLanguages();
     }, [item.name, fetchLanguages]); // Executar quando o nome do projeto mudar
 
+    // Fechar modal com ESC
+    useEffect(() => {
+        const handleEscPress = (event: KeyboardEvent) => {
+            if (event.key === 'Escape' && isModalOpen) {
+                setIsModalOpen(false);
+            }
+        };
+
+        if (isModalOpen) {
+            document.addEventListener('keydown', handleEscPress);
+            // Prevenir scroll do body quando modal está aberto
+            document.body.style.overflow = 'hidden';
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscPress);
+            document.body.style.overflow = 'unset';
+        };
+    }, [isModalOpen]);
+
     const category = getProjectCategory();
 
+    // Função para formatar data
+    const formatDate = (dateString: string) => {
+        return new Date(dateString).toLocaleDateString('pt-BR', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    };
+
     return (
-        <div 
-            className="group relative bg-white dark:bg-[#0A0A0B] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:translate-y-[-8px] border border-gray-100 dark:border-[#1a1a1d] overflow-hidden max-w-md"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
+        <>
+            <div 
+                className="group relative bg-white dark:bg-[#0A0A0B] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:translate-y-[-8px] border border-gray-100 dark:border-[#1a1a1d] overflow-hidden max-w-md cursor-pointer"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                onClick={() => setIsModalOpen(true)}
+            >
             {/* Project Preview/Header */}
             <div className="relative h-48 bg-gradient-to-br from-[#5C63ED] to-[#623CEA] overflow-hidden">
                 {/* Placeholder for project image */}
@@ -254,6 +287,154 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
                 </div>
             </div>
         </div>
+
+        {/* Modal Detalhado */}
+        {isModalOpen && (
+            <div 
+                className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                onClick={() => setIsModalOpen(false)}
+            >
+                <div 
+                    className="bg-white dark:bg-[#0A0A0B] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    {/* Header do Modal */}
+                    <div className="relative h-64 bg-gradient-to-br from-[#5C63ED] to-[#623CEA] overflow-hidden">
+                        {/* Botão de Fechar */}
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setIsModalOpen(false);
+                            }}
+                            className="absolute top-4 right-4 bg-black/30 backdrop-blur-sm text-white p-2 rounded-full hover:bg-black/50 transition-colors z-10"
+                            aria-label="Fechar modal"
+                        >
+                            <FaTimes size={18} />
+                        </button>
+
+                        {/* Category Badge */}
+                        <div className={`absolute top-4 left-4 ${categoryColors[category]} text-white px-4 py-2 rounded-full text-sm font-medium`}>
+                            {categoryLabels[category]}
+                        </div>
+
+                        {/* Stats */}
+                        <div className="absolute bottom-4 left-4 flex gap-4">
+                            {item.stargazers_count > 0 && (
+                                <div className="bg-black/30 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                                    <FaStar size={14} className="text-yellow-400" />
+                                    {item.stargazers_count} Stars
+                                </div>
+                            )}
+                            {item.forks_count > 0 && (
+                                <div className="bg-black/30 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                                    <FaCodeBranch size={14} />
+                                    {item.forks_count} Forks
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Project Title */}
+                        <div className="absolute bottom-4 right-4">
+                            <h2 className="text-3xl font-bold text-white text-right">
+                                {item.translatedName}
+                            </h2>
+                        </div>
+                    </div>
+
+                    {/* Conteúdo do Modal */}
+                    <div className="p-8 overflow-y-auto max-h-[calc(90vh-16rem)]">
+                        {/* Descrição Completa */}
+                        <div className="mb-8">
+                            <h3 className="text-2xl font-semibold text-[#212529] dark:text-[#F8F9FA] mb-4">
+                                Sobre o Projeto
+                            </h3>
+                            <p className="text-[#495057] dark:text-[#868E96] leading-relaxed text-lg">
+                                {item.translatedDescription}
+                            </p>
+                        </div>
+
+                        {/* Tecnologias */}
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold text-[#212529] dark:text-[#F8F9FA] mb-4">
+                                {translations.language}
+                            </h3>
+                            <div className="flex flex-wrap gap-3">
+                                {isLoading ? (
+                                    <div className="flex gap-3">
+                                        {[...Array(3)].map((_, i) => (
+                                            <div key={i} className="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-lg animate-pulse">
+                                                <span className="opacity-0">Loading...</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : languages.length > 0 ? (
+                                    languages.map((lang, index) => (
+                                        <span 
+                                            key={index}
+                                            className="bg-[#E7E8FC] dark:bg-[#1a1a1d] text-[#5C63ED] dark:text-[#868E96] px-4 py-2 rounded-lg font-medium"
+                                        >
+                                            {lang}
+                                        </span>
+                                    ))
+                                ) : (
+                                    <span className="bg-[#E7E8FC] dark:bg-[#1a1a1d] text-[#5C63ED] dark:text-[#868E96] px-4 py-2 rounded-lg font-medium">
+                                        {item.language || "Mixed"}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Informações Adicionais */}
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold text-[#212529] dark:text-[#F8F9FA] mb-4">
+                                Detalhes do Projeto
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="flex items-center gap-3 text-[#495057] dark:text-[#868E96]">
+                                    <FaCalendarAlt size={16} className="text-[#5C63ED] dark:text-[#623CEA]" />
+                                    <div>
+                                        <span className="font-medium">Criado:</span> {formatDate(item.created_at)}
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-3 text-[#495057] dark:text-[#868E96]">
+                                    <FaCalendarAlt size={16} className="text-[#5C63ED] dark:text-[#623CEA]" />
+                                    <div>
+                                        <span className="font-medium">Atualizado:</span> {formatDate(item.updated_at)}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Botões de Ação */}
+                        <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200 dark:border-[#1a1a1d]">
+                            <a 
+                                href={item.html_url}
+                                target="_blank"
+                                rel="noopener noreferrer" 
+                                className="flex-1 bg-[#5C63ED] hover:bg-[#4C51BF] text-white font-semibold py-3 px-6 rounded-xl transition-colors flex items-center justify-center gap-3"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <FaGithub size={20} />
+                                Ver no GitHub
+                            </a>
+                            {item.homepage && (
+                                <a 
+                                    href={item.homepage}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex-1 bg-transparent border-2 border-[#5C63ED] text-[#5C63ED] hover:bg-[#5C63ED] hover:text-white font-semibold py-3 px-6 rounded-xl transition-colors flex items-center justify-center gap-3"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <FaExternalLinkAlt size={18} />
+                                    Ver {translations.application}
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )}
+        </>
     );
 };
 

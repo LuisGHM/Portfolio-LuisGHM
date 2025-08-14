@@ -33,7 +33,7 @@ interface ProjectsListProps {
 
 const ProjectsList = async ({ generalTranslations, projectsTranslations, sectionTranslations }: ProjectsListProps) => {
   try {
-    const response = await api.get("/users/luisghm/repos");
+    const response = await api.get("/users/LuisGHM/repos");
 
     if (response.status === 200) {
       const projects: projectsGit[] = response.data;
