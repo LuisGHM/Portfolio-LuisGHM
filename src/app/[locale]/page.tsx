@@ -194,7 +194,7 @@ export default function Home() {
   // 🚀 MUDANÇA PRINCIPAL: Buscar TODOS os projetos traduzidos automaticamente
   const tProjectsSection = useTranslations("Projects");
   
-  // Lista completa de todos os projetos traduzidos (23 projetos!)
+  // Lista completa de todos os projetos traduzidos (24 projetos!)
   const allAvailableProjects = [
     "controle-de-projetos-kenzievelopers-LuisGHM",
     "ControleFinanceiroKenzie",
@@ -218,7 +218,8 @@ export default function Home() {
     "Kenzie-fullstack-challenge-Back-LuisGHM",
     "Kenzie-fullstack-challenge-Front-LuisGHM",
     "Portfolio-LuisGHM",
-    "titanic-kaggle-ml"
+    "titanic-kaggle-ml",
+    "clothing-detection-tools"
   ];
 
   // Criar objeto de traduções para TODOS os projetos usando hook uma única vez
