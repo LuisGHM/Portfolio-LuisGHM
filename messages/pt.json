@@ -241,7 +241,15 @@
     "Kenzie-fullstack-challenge-Front-LuisGHM": {
       "Name": "Desafio Full-Stack Front-End",
       "Description": "Eu desenvolvi um projeto full-stack como parte de um desafio proposto pela Kenzie Academy, onde pude aplicar meus conhecimentos em front-end e back-end. O projeto consiste em um sistema de registro de clientes e seus contatos, com operações CRUD básicas e geração de relatórios exibindo os dados dos clientes e seus contatos vinculados. Utilizei TypeScript para a implementação, garantindo uma experiência funcional e fluida para o usuário."
-    }
+    },
+    "Portfolio-LuisGHM": {
+      "Name": "Portfólio Profissional",
+      "Description": "Desenvolvi esta plataforma de portfólio profissional como um projeto full-stack abrangente que demonstra minhas habilidades técnicas mais avançadas. Construído com Next.js 14 e App Router, o projeto apresenta uma arquitetura moderna com TypeScript, implementando internacionalização completa para alcance global, sistema de temas dark/light persistentes e design responsivo mobile-first. Integrei dinamicamente meus projetos via GitHub API, desenvolvi um sistema de contato funcional com processamento server-side de emails usando Nodemailer, e otimizei completamente para SEO com metadata estruturada. A plataforma alcança scores superiores a 95 no Lighthouse, demonstrando excelência em performance, acessibilidade e melhores práticas de desenvolvimento web. Este projeto representa não apenas meu showcase profissional, mas também uma demonstração prática das tecnologias e metodologias que domino no desenvolvimento de aplicações web modernas."
+    },
+    "titanic-kaggle-ml": {
+      "Name": "Predição de Sobrevivência do Titanic - Pipeline de Machine Learning",
+      "Description": "Desenvolvi uma solução completa de machine learning para a icônica competição Titanic do Kaggle, alcançando score público de 0.78229 e demonstrando proficiência em workflows completos de ciência de dados. Construído com Python e scikit-learn, o projeto implementa um pipeline de ML robusto com pré-processamento sofisticado de dados, engenharia estratégica de features e comparação sistemática de modelos. Engenheirei features customizadas incluindo indicadores binários de cabine, implementei estratégias automatizadas de imputação de dados faltantes usando métodos estatísticos (mediana/moda), e projetei um pipeline completo de pré-processamento com OneHotEncoder para variáveis categóricas e StandardScaler para features numéricas. A solução compara múltiplos algoritmos incluindo Regressão Logística (alcançando 81% de acurácia na validação) e Support Vector Machine com kernel RBF, utilizando divisões estratificadas treino-validação e técnicas de validação cruzada para avaliação robusta do modelo. Este projeto exemplifica as melhores práticas modernas de ciência de dados, desde análise exploratória até deployment de modelos, representando minha expertise em desenvolvimento de pipelines de machine learning, engenharia de features e metodologias de ciência de dados competitiva essenciais para aplicações do mundo real."
+    } 
   },
   "Footer": {
     "thanks": "Obrigado por acessar!!"

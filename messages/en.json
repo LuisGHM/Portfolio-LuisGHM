@@ -243,7 +243,15 @@
     "Kenzie-fullstack-challenge-Front-LuisGHM": {
       "Name": "Full Stack Challenge Front-End",
       "Description": "I developed a full-stack project as part of a challenge proposed by Kenzie Academy, where I could apply my knowledge in front-end and back-end. The project consists of a client and their contacts' registration system, with basic CRUD operations and report generation displaying the data of clients and their linked contacts. I used TypeScript for the implementation, ensuring a functional and smooth experience for the user."
-    }
+    },
+    "Portfolio-LuisGHM": {
+      "Name": "Professional Portfolio",
+      "Description": "I developed this professional portfolio platform as a comprehensive full-stack project that showcases my most advanced technical skills. Built with Next.js 14 and App Router, the project features a modern architecture with TypeScript, implementing complete internationalization for global reach, persistent dark/light theme system, and mobile-first responsive design. I dynamically integrated my projects via GitHub API, developed a functional contact system with server-side email processing using Nodemailer, and fully optimized for SEO with structured metadata. The platform achieves 95+ Lighthouse scores, demonstrating excellence in performance, accessibility, and modern web development best practices. This project represents not only my professional showcase but also a practical demonstration of the technologies and methodologies I master in developing modern web applications."
+    },
+    "titanic-kaggle-ml": {
+      "Name": "Titanic Survival Prediction - Machine Learning Pipeline",
+      "Description": "I developed a comprehensive machine learning solution for Kaggle's iconic Titanic competition, achieving a public score of 0.78229 and demonstrating proficiency in end-to-end data science workflows. Built with Python and scikit-learn, the project implements a robust ML pipeline featuring sophisticated data preprocessing, strategic feature engineering, and systematic model comparison. I engineered custom features including binary cabin indicators, implemented automated missing data imputation strategies using statistical methods (median/mode), and designed a complete preprocessing pipeline with OneHotEncoder for categorical variables and StandardScaler for numerical features. The solution compares multiple algorithms including Logistic Regression (achieving 81% validation accuracy) and Support Vector Machine with RBF kernel, utilizing stratified train-validation splits and cross-validation techniques for robust model evaluation. This project exemplifies modern data science best practices, from exploratory data analysis through model deployment, representing my expertise in machine learning pipeline development, feature engineering, and competitive data science methodologies essential for real-world applications."
+    } 
   },
   "Footer": {
     "thanks": "Thanks for accessing!!"
