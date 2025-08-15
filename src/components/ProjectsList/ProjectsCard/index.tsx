@@ -36,12 +36,13 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
     const getProjectCategory = () => {
         const name = item.name;
         
-        // 🤖 AI/Computer Vision - Projetos reais de IA
+        // 🤖 AI & Machine Learning - Projetos de IA, ML, Computer Vision
         const aiProjects = [
             'clothing-detection-tools',
             'curitibaBusRecognition', 
             'StyleSight',
-            'titanic-kaggle-ml'
+            'titanic-kaggle-ml',
+            'fall-detection-ml'
         ];
         
         // 🛠️ APIs/Backend - APIs e sistemas backend
@@ -83,14 +84,14 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
     const categoryColors: Record<'web' | 'api' | 'ai' | 'fullstack', string> = {
         web: 'bg-blue-500',      // 🌐 Frontend/Web
         api: 'bg-orange-500',    // 🛠️ APIs/Backend  
-        ai: 'bg-purple-500',     // 🤖 AI/Computer Vision
+        ai: 'bg-purple-500',     // 🤖 AI & Machine Learning
         fullstack: 'bg-green-500' // 🚀 Full-Stack
     };
 
     const categoryLabels: Record<'web' | 'api' | 'ai' | 'fullstack', string> = {
         web: 'Frontend/Web',
         api: 'API/Backend',
-        ai: 'AI/Computer Vision',
+        ai: 'AI & Machine Learning',
         fullstack: 'Full-Stack'
     };
 
