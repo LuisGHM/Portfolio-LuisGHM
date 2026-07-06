@@ -41,6 +41,10 @@ const Header = ({ portuguese, english, whatsapp }: any) => {
                                 src={luis} 
                                 alt="Luis Gustavo Hedel Marchiore" 
                                 className="w-12 h-12 rounded-full border-2 border-[#5C63ED]/20 dark:border-[#623CEA]/20 group-hover:border-[#5C63ED] dark:group-hover:border-[#623CEA] transition-all duration-300 shadow-md" 
+                                width={48}
+                                height={48}
+                                priority
+                                placeholder="blur"
                             />
                             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#5C63ED]/10 to-[#623CEA]/10 group-hover:from-[#5C63ED]/20 group-hover:to-[#623CEA]/20 transition-all duration-300"></div>
                         </div>

@@ -158,6 +158,12 @@
     "SectionTitle": "PROJETOS",
     "Title": "Meus Projetos",
     "Description": "Uma coleção de projetos demonstrando minha expertise em desenvolvimento full-stack e engenharia de IA",
+    "LoadingStates": {
+      "loading": "Carregando projetos...",
+      "error": "Falha ao carregar projetos",
+      "noProjects": "Nenhum projeto disponível no momento",
+      "tryAgain": "Tentar Novamente"
+    },
     "controle-de-projetos-kenzievelopers-LuisGHM": {
       "Name": "Controle de projetos",
       "Description": "O Controle de Projetos - KenzieVelopers é uma API Rest desenvolvida para facilitar a gestão de desenvolvedores e projetos em uma startup de tecnologia e desenvolvimento web. Criada utilizando TypeScript e integrada com um banco de dados PostgreSQL, esta aplicação permite o registro de desenvolvedores, associação de informações extras a cada desenvolvedor e o gerenciamento de projetos atribuídos a eles."

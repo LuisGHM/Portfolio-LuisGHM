@@ -5,10 +5,11 @@ import Experience from "@/components/Section/Experience";
 import Education from "@/components/Section/Education";
 import DetailedSkills from "@/components/Section/DetailedSkills";
 import Technologies from "@/components/Section/Technologies";
-import ProjectsList from "@/components/ProjectsList";
+import ProjectsListClient from "@/components/ProjectsList/ProjectsListClient";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/footer";
 import BackToTop from "@/components/BackToTop";
+import PWAInstaller from "@/components/PWA/PWAInstaller";
 
 export default function Home() {
   const t = useTranslations("Home");
@@ -191,6 +192,13 @@ export default function Home() {
     description: tProjects("Description")
   };
 
+  const projectsErrorTranslations = {
+    loading: tProjects("LoadingStates.loading"),
+    error: tProjects("LoadingStates.error"),
+    noProjects: tProjects("LoadingStates.noProjects"),
+    tryAgain: tProjects("LoadingStates.tryAgain")
+  };
+
   // 🚀 MUDANÇA PRINCIPAL: Buscar TODOS os projetos traduzidos automaticamente
   const tProjectsSection = useTranslations("Projects");
   
@@ -265,10 +273,11 @@ export default function Home() {
       </section>
       
       <main className="bg-white dark:bg-[#121214]">
-        <ProjectsList 
+        <ProjectsListClient 
           generalTranslations={projectsGeneralTranslations}
           projectsTranslations={projectsTranslations}
           sectionTranslations={projectsSectionTranslations}
+          errorTranslations={projectsErrorTranslations}
         />
       </main>
       
@@ -281,6 +290,7 @@ export default function Home() {
       </footer>
       
       <BackToTop />
+      <PWAInstaller />
     </>
   )
 }

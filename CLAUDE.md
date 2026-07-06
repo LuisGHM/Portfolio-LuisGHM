@@ -42,7 +42,13 @@ This is a Next.js 14 portfolio website for Luis Gustavo Hedel Marchiore, a Softw
 ### Data & Services
 - **GitHub API**: `src/services/api.js` configured with GitHub API integration
 - **Environment variables**: Supports both `TOKEN` and `GITHUB_TOKEN` for API access
-- **Axios**: HTTP client with 15-second timeout and bearer token authentication
+- **Fetch-based client**: `src/services/api.js` exposes an `api.get(url)` wrapper over native `fetch` (no axios) with a bearer token header and 1-hour `revalidate` cache. Returns `{ status, data, ok }`.
+- **Projects rendering**: `src/components/ProjectsList/ProjectsListClient` is a client component that fetches repos, filters by translated projects, and renders `ProjectsCard`. Loading state uses `ProjectsSkeleton`; error state has retry.
+
+### PWA
+- **Manifest**: `public/manifest.json` wired into metadata in `src/app/[locale]/layout.tsx`
+- **Service worker**: `public/sw.js` (offline page + cache), registered by `src/components/PWA/PWAInstaller.tsx` which also shows the install prompt
+- **Icons**: `public/icons/` currently holds only a placeholder — real PNG icons still need to be generated for production installs
 
 ### Key Features
 - **Dynamic Projects**: Fetches project data from GitHub API
@@ -64,7 +70,8 @@ GITHUB_TOKEN=your_github_token
 
 - `src/providers/providers.js` - Theme provider wrapper with hydration handling
 - `src/hooks/useLocale.ts` - Custom hook for locale management
-- `src/services/api.js` - GitHub API configuration and axios instance
+- `src/services/api.js` - GitHub API configuration (native fetch wrapper)
+- `src/hooks/useScrollAnimation.ts` - IntersectionObserver hooks for scroll-reveal animations
 - `messages/*.json` - Translation files for all UI text
 - `src/i18n.ts` - Internationalization configuration
 

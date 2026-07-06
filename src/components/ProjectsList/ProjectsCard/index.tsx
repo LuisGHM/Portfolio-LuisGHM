@@ -2,6 +2,7 @@
 import { api } from "@/services/api";
 import { FaGithub, FaExternalLinkAlt, FaStar, FaTimes, FaCalendarAlt, FaCodeBranch } from "react-icons/fa";
 import { useState, useEffect, useCallback } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export interface ProjectsCardProps {
     item: {
@@ -31,6 +32,9 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Scroll animation hook
+    const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
     // Categorizar projetos baseado no que cada um realmente é
     const getProjectCategory = () => {
@@ -158,8 +162,11 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
 
     return (
         <>
-            <div 
-                className="group relative bg-white dark:bg-[#0A0A0B] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:translate-y-[-8px] border border-gray-100 dark:border-[#1a1a1d] overflow-hidden max-w-md cursor-pointer"
+            <div
+                ref={elementRef}
+                className={`group relative bg-white dark:bg-[#0A0A0B] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:translate-y-[-8px] border border-gray-100 dark:border-[#1a1a1d] overflow-hidden max-w-md cursor-pointer hover-lift hover-glow ${
+                    isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-8'
+                }`}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => setIsModalOpen(true)}
@@ -291,12 +298,12 @@ export const ProjectsCard = ({ item, translations }: ProjectsCardProps) => {
 
         {/* Modal Detalhado */}
         {isModalOpen && (
-            <div 
-                className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            <div
+                className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
                 onClick={() => setIsModalOpen(false)}
             >
-                <div 
-                    className="bg-white dark:bg-[#0A0A0B] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+                <div
+                    className="bg-white dark:bg-[#0A0A0B] rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden animate-scale-in"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Header do Modal */}
