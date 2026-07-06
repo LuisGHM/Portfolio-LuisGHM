@@ -37,7 +37,7 @@ This is a Next.js 14 portfolio website for Luis Gustavo Hedel Marchiore, a Softw
 - **Tailwind CSS**: Primary styling framework
 - **Theme system**: Dark/light mode via `next-themes` in providers
 - **Custom CSS**: Additional styles in `src/styles/` directory
-- **Flowbite React**: UI component library for enhanced components
+- **Icons**: `react-icons` for iconography
 
 ### Data & Services
 - **GitHub API**: `src/services/api.js` configured with GitHub API integration

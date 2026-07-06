@@ -164,7 +164,6 @@
       "noProjects": "No projects available at the moment",
       "tryAgain": "Try Again"
     },
-    "Description": "A collection of projects showcasing my expertise in full-stack development and AI engineering",
     "controle-de-projetos-kenzievelopers-LuisGHM": {
       "Name": "Project Control",
       "Description": "The Project Control - KenzieVelopers is a Rest API developed to facilitate the management of developers and projects in a technology and web development startup. Created using TypeScript and integrated with a PostgreSQL database, this application allows the registration of developers, association of extra information to each developer, and management of projects assigned to them."
@@ -264,6 +263,22 @@
     "fall-detection-ml": {
       "Name": "Fall Detection System using Machine Learning",
       "Description": "Developed a fall detection system using inertial sensor data from wearable devices, achieving 97.92% F1-score. Implemented a complete ML pipeline with feature selection and hyperparameter optimization using Python and scikit-learn for healthcare applications. Key implementations include feature engineering from accelerometer, gyroscope, and magnetometer data (27 statistical features), SelectKBest feature selection reducing dimensionality to the 20 most relevant features, Support Vector Machine with RBF kernel optimized via GridSearchCV, and GroupKFold cross-validation grouped by volunteer ID to prevent data leakage. Achieved 100% specificity (no false alarms) and 94.4% sensitivity for fall detection, demonstrating expertise in healthcare AI applications, sensor data processing, and robust ML pipeline development for safety-critical systems."
+    },
+    "PPAM": {
+      "Name": "Book Recommendation System - Machine Learning",
+      "Description": "A book recommendation system that combines artificial intelligence techniques with Python to suggest personalized readings. Using the K-Nearest Neighbors (KNN) algorithm, the model analyzes patterns in user and book data to generate tailored recommendations. Built in a Jupyter environment with Pandas and scikit-learn, the project covers personalized recommendations, ratings and feedback handling, and automatic updates as new data comes in. Developed collaboratively as part of an academic project, it demonstrates the practical application of recommender systems and exploratory data analysis."
+    },
+    "TaskManagementAPI": {
+      "Name": "Task Management Application - T3 Stack",
+      "Description": "A task management application built with the T3 Stack, a modern full-stack TypeScript setup. It combines Next.js for the frontend and server rendering, tRPC for end-to-end type-safe APIs, Prisma and Drizzle for database access, NextAuth.js for authentication, and Tailwind CSS for styling. The project demonstrates a type-safe, production-oriented architecture for creating and managing tasks, and is deployed on Vercel."
+    },
+    "cardealerapp": {
+      "Name": "Car Dealer Application",
+      "Description": "A car dealer web application that lets users filter vehicles by type and model year and browse the matching models. Built with Next.js and React, it consumes the public VPIC (NHTSA) API to fetch vehicle data, uses React Query for data fetching and caching, and Tailwind CSS for a responsive, modern interface. The app features file-based routing, graceful error handling, and environment-based configuration, showcasing clean integration with a third-party API."
+    },
+    "sistemaEscolar": {
+      "Name": "School Management System (C)",
+      "Description": "A console-based school management system written in C, organized into separate administrator and student areas. The application handles school records through a file-based data layer, with dedicated modules for the home screens and role-specific menus. The project demonstrates fundamentals of C programming, modular code organization, and file persistence without external dependencies."
     }
   },
   "Footer": {

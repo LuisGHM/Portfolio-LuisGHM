@@ -263,6 +263,22 @@
     "fall-detection-ml": {
       "Name": "Sistema de Detecção de Quedas usando Machine Learning",
       "Description": "Desenvolvi um sistema de detecção de quedas usando dados de sensores inerciais de dispositivos vestíveis, alcançando 97,92% de F1-score. Implementei um pipeline completo de ML com seleção de features e otimização de hiperparâmetros usando Python e scikit-learn para aplicações em saúde. As principais implementações incluem engenharia de features a partir de dados de acelerômetro, giroscópio e magnetômetro (27 características estatísticas), seleção de features SelectKBest reduzindo a dimensionalidade para as 20 características mais relevantes, Support Vector Machine com kernel RBF otimizado via GridSearchCV, e validação cruzada GroupKFold agrupada por ID do voluntário para prevenir vazamento de dados. Alcancei 100% de especificidade (sem falsos alarmes) e 94,4% de sensibilidade para detecção de quedas, demonstrando expertise em aplicações de IA para saúde, processamento de dados de sensores e desenvolvimento robusto de pipelines de ML para sistemas críticos de segurança."
+    },
+    "PPAM": {
+      "Name": "Sistema de Recomendação de Livros - Machine Learning",
+      "Description": "Sistema de recomendação de livros que combina técnicas de inteligência artificial com Python para sugerir leituras personalizadas. Utilizando o algoritmo K-Nearest Neighbors (KNN), o modelo analisa padrões nos dados de usuários e livros para gerar recomendações sob medida. Construído em ambiente Jupyter com Pandas e scikit-learn, o projeto abrange recomendações personalizadas, tratamento de avaliações e feedback, e atualizações automáticas conforme novos dados chegam. Desenvolvido de forma colaborativa como parte de um projeto acadêmico, demonstra a aplicação prática de sistemas de recomendação e análise exploratória de dados."
+    },
+    "TaskManagementAPI": {
+      "Name": "Aplicação de Gerenciamento de Tarefas - T3 Stack",
+      "Description": "Aplicação de gerenciamento de tarefas construída com a T3 Stack, uma stack full-stack moderna em TypeScript. Combina Next.js para o frontend e renderização no servidor, tRPC para APIs type-safe de ponta a ponta, Prisma e Drizzle para acesso ao banco de dados, NextAuth.js para autenticação e Tailwind CSS para estilização. O projeto demonstra uma arquitetura type-safe e orientada a produção para criar e gerenciar tarefas, com deploy na Vercel."
+    },
+    "cardealerapp": {
+      "Name": "Aplicação de Concessionária de Veículos",
+      "Description": "Aplicação web de concessionária que permite ao usuário filtrar veículos por tipo e ano do modelo e navegar pelos modelos correspondentes. Construída com Next.js e React, consome a API pública VPIC (NHTSA) para buscar dados de veículos, usa React Query para busca e cache de dados e Tailwind CSS para uma interface responsiva e moderna. O app possui roteamento baseado em arquivos, tratamento adequado de erros e configuração por variáveis de ambiente, demonstrando integração limpa com uma API de terceiros."
+    },
+    "sistemaEscolar": {
+      "Name": "Sistema de Gestão Escolar (C)",
+      "Description": "Sistema de gestão escolar em modo console escrito em C, organizado em áreas separadas de administrador e aluno. A aplicação gerencia registros escolares através de uma camada de dados baseada em arquivos, com módulos dedicados para as telas iniciais e menus específicos de cada perfil. O projeto demonstra fundamentos de programação em C, organização modular de código e persistência em arquivos sem dependências externas."
     }
   },
   "Footer": {
